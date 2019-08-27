@@ -1,16 +1,31 @@
 var express = require("express");
 var app = express();
+// hello
+
+app.set("view engine", "ejs");
+// app.set("views", "pages");
+
+
+app.use(express.static(__dirname+"/public"));
+
 
 app.get("/", function(req, res){
-    res.sendFile(__dirname+"/home.html");
+    res.render("home");
+});
+
+app.get("/about", function(req, res){
+    var obj = { name : "rohit", city : "indore", age : 25};
+
+
+    res.render("about", obj);
     
 });
-app.get("/user", function(req, res){
-    res.sendFile(__dirname+"/user.html");
+app.get("/contact", function (req, res) {
+    res.render("contact");
+
 });
-app.get("/about", function(req, res){
-    res.sendFile(__dirname+"/about.html");
-});
+
+
 
 
 // .listen() is crating a virtual server
