@@ -27,7 +27,7 @@ app.get("/terms", function(req, res){
 });
 
 
-app.get("/login", function (req, res) {
+app.get("/login", function (req, res) { 
     var pagedata = { pagename: "login", title: "Login Page" };
     res.render("layout", pagedata);
 });
