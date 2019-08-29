@@ -17,23 +17,14 @@ app.get("/contact", function (req, res) {
     var pagedata = { pagename: "contact", title: "Contact Page" };
     res.render("layout", pagedata);
 });
-
-
-
-
 app.get("/terms", function(req, res){
     var pagedata = { pagename: "terms", title: "Terms Page" };
     res.render("layout", pagedata);
 });
-
-
 app.get("/login", function (req, res) { 
     var pagedata = { pagename: "login", title: "Login Page" };
     res.render("layout", pagedata);
 });
-
-
-
 app.listen(3000, function(){
     console.log("server running");
 });
