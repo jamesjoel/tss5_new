@@ -7,34 +7,41 @@
     <script src="/js/bootstrap.bundle.js"></script>
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+        <a href="/" class="navbar-brand">TSS</a>
+        <ul class="navbar navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">View</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/add">Add</a>
+            </li>
+        </ul>
+    </nav>
 <div class="container">
+    <br />
+    <br />
     <div class="row">
-        <div class="col-md-4 offset-md-4">
-                <form action="/save" method="post">
-            <div class="card mt-4">
+        <div class="col-md-6 offset-md-3">
+            <table class="table table-hover table-dark table-bordered">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+                <% result.forEach(function(x, n){ %>
+                    <tr>
+                        <td><%= n+1 %></td>
+                        <td><%= x.name %></td>
+                        <td><%= x.age %></td>
+                        <td><%= x.city %></td>
+                    </tr>
+                <% }) %>
+            </table>
 
-                    
-                    <div class="card-header">My Form</div>
-                    <div class="card-body">
-                        <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" class="form-control" name="f_name"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" class="form-control" name="email"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Address</label>
-                        <textarea class="form-control" name="add"></textarea>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <input type="submit" value="Submit" class="btn btn-primary" />
-                </div>
-            </form>
-            </div>
         </div>
+    </div>
 
 
     </div>
