@@ -43,7 +43,7 @@ app.get("/list", function(req, res){
             city: "bhopal"
         }
     ];
-
+    
     var obj = { stu : data };
 
     res.render("list", obj);

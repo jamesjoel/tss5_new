@@ -4,6 +4,8 @@ var bodyParser = require("body-parser");
 var MongoClient = require("mongodb").MongoClient;
 var DBurl = "mongodb://localhost:27017";
 
+var mongo = require("mongodb");
+
 
 
 
@@ -28,12 +30,44 @@ app.get("/employee", function (req, res) {
             res.render("employee", obj);
         });
     });
-    
 });
 app.get("/add_employee", function(req, res){
     res.render("add");
 
 });
+app.get("/employee/delete", function(req, res){
+    console.log(req.query);
+    var a = req.query.id;
+    MongoClient.connect(DBurl, function(err, result){
+        var db = result.db("tss5");
+        db.collection("employee").remove({_id : mongo.ObjectId(a)}, function(err, result){
+            res.redirect("/employee");
+        });
+    });
+});
+app.get("/employee/show", function(req, res){
+    // var id = req.params.id;
+    var id = req.query.id;
+    MongoClient.connect(DBurl, function(err, result){
+        var db = result.db("tss5");
+        db.collection("employee").find({_id : mongo.ObjectId(id)}).toArray(function(err, result){
+            
+            res.render("show", { result : result[0]});
+        });
+    });
+});
+
+
+
+
+// app.get("/demo", function(req, res){
+//     console.log(req.query);
+// });
+
+app.get("/demo/:name/:age/:city", function(req, res){
+    console.log(req.params);
+});
+
 
 app.post("/add_employee", function(req, res){
     
