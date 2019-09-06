@@ -1,0 +1,24 @@
+<div class="container" style="min-height: 600px;">
+    <h1>Teachers Page</h1>
+    <div class="col-md-8 offset-md-2">
+        <table class="table table-hover table-bordered table-dark">
+            <tr>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Eductaion</th>
+                <th>Address</th>
+            </tr>
+            <% result.forEach(function(x, n){ %>
+                <tr>
+                    <td><%= n+1 %></td>
+                    <td><%= x.name %></td>
+                    <td><%= x.education %></td>
+                    <td><%= x.address %></td>
+                </tr>
+            <% }) %>
+
+
+
+        </table>
+    </div>
+</div>
