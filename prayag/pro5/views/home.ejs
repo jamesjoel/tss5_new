@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Home page</title>
+        <link type="text/css" rel="stylesheet" href="/css/bootstrap.css"/>
+        <script src="/js/jquery.js"></script>
+        <script src="/js/bootstrap.bundle.js"></script>
+    </head>
+    <body>
+      <h2><%= username %> </h2>
+      <ol>
+          <% city.forEach(funtion(x){ %>
+            <li>
+                <%= x %>
+            </li>
+          <%  }) %>
+      </ol>  
+    </body>
+</html>

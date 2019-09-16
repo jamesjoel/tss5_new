@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form action="/add" method="POST">
+            <h2>Employee Details</h2>
+            <div class="form-group">
+                <label>Employee Name</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Salary</label>
+                <input type="text" class="form-control" name="salary">
+            </div>
+            <div class="form-group">
+                <label>Department</label>
+                <select name="department" class="form-control">
+                    <option>Select</option>
+                    <option>Mechanical</option>
+                    <option>Electrical</option>
+                    <option>Civil</option>
+                    <option>CS/IT</option>
+                    <option>Automobile</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>City</label>
+                <select name="city" class="form-control">
+                    <option>select</option>
+                    <% result.forEach(function(x){ %>
+                        <option><%= x.name %></option>
+                    <% }) %>
+                    
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="submit" class="btn btn-success d-block mx-auto">
+            </div>
+        
+        </form>
+    </div>
+</div>
