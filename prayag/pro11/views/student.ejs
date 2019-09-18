@@ -6,6 +6,7 @@
 			<th>Age</th>
 			<th>City</th>
 			<th>Delete</th>
+			<th>Edit</th>
 		</tr>
 		<% result.forEach(function(x,n){ %>
 		<tr>
@@ -14,6 +15,7 @@
 			<td><%= x.age %></td>
 			<td><%= x.city %></td>
 			<td><a href="/delete/<%= x._id %>" class="btn btn-danger btn-sm">Delete</a></td>
+			<td><a href="/edit/<%= x._id %>" class="btn btn-success">Edit</a></td>
 		</tr>
 
 	   <%  }) %>

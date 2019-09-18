@@ -68,6 +68,33 @@ app.get("/delete/:id",function(req,res){
 })
 
 
+app.get("/edit/:id",function(req,res){
+    MongoClient.connect(Dburl,function(err,client){
+        var db=client.db("tss5")
+        db.collection("city").find().toArray(function(err,result1){
+            db.collection("student").find({_id:mongo.ObjectId(req.params.id)}).toArray(function(err,result2){
+                var pagedata={title:"Student edit",pagename:"edit",result:result1,user:result2[0]}
+                res.render("layout",pagedata)
+            })
+        })
+    })
+})
+
+app.post("/edit",function(req,res){
+    console.log(req.body)
+    MongoClient.connect(Dburl,function(err,client){
+        var db=client.db("tss5")
+        db.collection("student").update({_id:mongo.ObjectId(req.body.sid)},{$set:req.body},function(err,result){
+            res.redirect("/student")
+        })
+    })
+})
+
+
+
+
+
+
 
 
 
