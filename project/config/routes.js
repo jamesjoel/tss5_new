@@ -6,6 +6,7 @@ routes.use("/", require("../controllers/home"));
 routes.use("/about", require("../controllers/about"));
 routes.use("/signup", require("../controllers/signup"));
 routes.use("/login", require("../controllers/login"));
+routes.use("/user", require("../controllers/user"));
 
 routes.use("/admin", require("../controllers/admin/index"));
 routes.use("/student", require("../controllers/student"));
