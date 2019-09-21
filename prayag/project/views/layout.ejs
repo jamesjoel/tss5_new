@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title></title>
+        <title><%= title %></title>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
         <link type="text/css" rel="stylesheet" href="css/font-awesome.css" />
         <link type="text/css" rel="stylesheet" href="css/style.css" />
@@ -17,7 +17,7 @@
                     <div class="col-md-4 offset-md-3 col-sm-5 offset-sm-1 col-5">
                         <ul class="nav justify-content-end">
                             <li class="nav-item">
-                                <a href="#" class="nav-link text-light p-1">Login</a>
+                                <a href="/login" class="nav-link text-light p-1">Login</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/signup" class="nav-link text-light p-1">Signup</a>
@@ -28,7 +28,7 @@
             </div>
         </div>
         <nav class="navbar navbar-dark bg-dark navbar-expand-sm sticky-top">
-            <a href="#" class="navbar-brand">My Shopping Site</a>
+            <a href="/" class="navbar-brand">My Shopping Site</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#mymenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -48,19 +48,13 @@
             </div>
             </nav>
 
-            <div class="jumbotron header-color">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1 class="display-4">New Arrival</h1>
-                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                        <button class="btn btn-my">Buy Now</button>
-                    </div>
-                    <div class="col-md-6 banner"></div>
-                </div>
-            </div>
+           
 
-            
+            <%- include(pagename) %>
 
+                    
+                    
+          
             <div class="container-fluid bg-dark">
                 <div class="container">
                     <div class="row">
