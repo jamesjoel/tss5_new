@@ -18,7 +18,10 @@ routes.post("/", function(req, res){
         }
         else{
             if(result[0].password == sha1(p)){
-                console.log("correct");
+               
+                req.session.uid = result[0]._id;
+                req.session.name = result[0].name;
+                req.session.is_user_logged_in = true;
                 res.redirect("/user");
             }
             else{
