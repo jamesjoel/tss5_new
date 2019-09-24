@@ -10,6 +10,7 @@ routes.get("/",function(req,res){
 })
 
 routes.post("/",function(req,res){
+    console.log("----------------------",req.body);
     var e=req.body.email
     var p=req.body.password
     User.find({email:e},function(err,result){
@@ -20,7 +21,14 @@ routes.post("/",function(req,res){
         }
         else{
             if(result[0].password==sha1(p)){
-                console.log("correct")
+
+                // console.log(result[0]._id)
+                req.session.uid = result[0]._id
+                req.session.name = result[0].name
+                req.session.is_user_logged_in = true ;
+
+
+                console.log(req.session);
                 res.redirect("/user")
             }
             else{
