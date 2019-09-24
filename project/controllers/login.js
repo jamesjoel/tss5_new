@@ -4,7 +4,7 @@ var User = require("../models/user");
 var sha1 = require("sha1");
 
 routes.get("/", function (req, res) {
-    var pagedata = { title: "Login", pagename: "login/index" };
+    var pagedata = { title: "Login", pagename: "login/index", msg : req.flash("msg"), u : req.flash("u") };
     res.render("layout", pagedata);
 });
 
@@ -14,7 +14,9 @@ routes.post("/", function(req, res){
     User.find({ email : e }, function(err, result){
         
         if(result.length==0){
-            console.log("this email and password is incorrect");
+            // console.log("this email and password is incorrect");
+            req.flash("msg", "This Username and Password is Incorrect");
+            res.redirect("/login");
         }
         else{
             if(result[0].password == sha1(p)){
@@ -25,8 +27,10 @@ routes.post("/", function(req, res){
                 res.redirect("/user");
             }
             else{
+                req.flash("msg", "This Password is Incorrect !");
+                req.flash("u", req.body.email);
+                res.redirect("/login");
                 
-                console.log("this password is incorrect");
             }
         }
 
