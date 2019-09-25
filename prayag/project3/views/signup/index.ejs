@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Registration </h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header text-center">
+                    Signup New User
+                </div>
+                <div class="card-body">
+                    <form action="/signup" method="POST">
+                        <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" name="name"  class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Username/Email</label>
+                                <input type="text" name="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" name="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Re-Enter Password</label>
+                                <input type="Password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea  class="form-control" name="address"  rows="2"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>City</label>
+                                <select name="city" class="form-control">
+                                        <option>Select</option>
+                                        <option>Indore</option>
+                                        <option>Bhopal</option>
+                                        <option>Ujjain</option>
+                                        <option>Delhi</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact</label>
+                                <input type="text" name="contact" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Gender</label>
+                                 Male <input type="radio" name="gender" value="male">
+                                 Fe-male <input type="radio" name="gender" value="Female">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Sign-Up" class="btn btn-primary d-block mx-auto ">
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
