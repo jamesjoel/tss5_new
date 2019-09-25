@@ -6,7 +6,7 @@ var sha1=require("sha1")
 
 
 routes.get("/",function(req,res){
-    var pagedata={ title:"login page", pagename:"login/index"}
+    var pagedata={ title:"login page", pagename:"login/index",msg:req.flash("msg"),u:req.flash("u")}
     res.render("layout",pagedata)
 })
 
@@ -18,7 +18,9 @@ routes.post("/",function(req,res){
         console.log(req.body)
         console.log(result)
         if(result.length==0){
-            console.log("this email and password is incorrect.")
+            // console.log("this email and password is incorrect.")
+            req.flash("msg","This Username and Password is Incorrect. !")
+            res.redirect("/login")
         }
        else{
            if(result[0].password==sha1(p)){
@@ -30,22 +32,15 @@ routes.post("/",function(req,res){
                res.redirect("/user")
            }
            else{
-               console.log("password is incorrect.")
+            //    console.log("password is incorrect.")
+            req.flash("msg","This Password is Incorrect. !")
+            req.flash("u",req.body.email)
+            res.redirect("/login")
            }
        }
     })
 
 })
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports=routes;

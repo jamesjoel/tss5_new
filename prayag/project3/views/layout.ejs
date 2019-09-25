@@ -16,19 +16,30 @@
                     </div>
                     <div class="col-md-4 offset-md-3 col-sm-5 offset-sm-1 col-5">
                         <ul class="nav justify-content-end">
-                            <li class="nav-item">
-                                <a href="/login" class="nav-link text-light p-1">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/signup" class="nav-link text-light p-1">Signup</a>
-                            </li>
+                            <% if(session.is_user_logged_in){ %>
+                                <li class="nav-item">
+                                    <a href="/logout" class="nav-link text-light p-1">Logout</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/profile" class="nav-link text-light p-1">My Profie</a>
+                                </li>
+                                <a href="#" class="btn btn-dark text-light"><%= session.name %></a>
+                                <% }else{ %>
+                                <li class="nav-item">
+                                    <a href="/login" class="nav-link text-light p-1">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/signup" class="nav-link text-light p-1">Signup</a>
+                                </li>
+                            <% } %>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </div>
         <nav class="navbar navbar-dark bg-dark navbar-expand-sm sticky-top">
-            <a href="#" class="navbar-brand">My Shopping Site</a>
+            <a href="/" class="navbar-brand">My Shopping Site</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#mymenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
