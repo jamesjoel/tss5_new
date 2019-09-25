@@ -56,6 +56,16 @@
                     <li class="nav-item">
                         <a href="/contact" class="nav-link">Contact</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product Categories</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header">All Categories</div>
+                            <% menu_category.forEach(function(category){ %>
+                                <a href="#" class="dropdown-item"><%= category.name; %></a>
+
+                            <% }); %>
+                        </div>
+                    </li>
                 </ul>
             </div>
             </nav>

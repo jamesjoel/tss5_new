@@ -1,0 +1,21 @@
+<div class="container mt-4">
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2>All Category</h2>
+            <table class="table table-hover table-bordered table-dark table-stripped">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Category Name</th>
+                </tr>
+                <% result.forEach(function(category, index){ %>
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= category.name %></td>
+                    </tr>
+                <% }); %>
+            </table>
+
+        </div>
+    </div>
+</div>
