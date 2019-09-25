@@ -9,6 +9,9 @@ routes.use("/signup",require("../controllers/signup"))
 routes.use("/login",require("../controllers/login"))
 
 
+routes.use("/admin",require("../controllers/admin/index"))
+
+
 routes.use("/user",backdoor,require("../controllers/user"))
 
 
@@ -21,7 +24,10 @@ function backdoor(req,res,next){
 }
 
 
-
+routes.get("/logout",function(req,res){
+    req.session.destroy()
+    res.redirect("/login")
+})
 
 
 
