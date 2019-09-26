@@ -9,6 +9,8 @@ var nocache=require("nocache")
 
 var sha1=require("sha1")
 
+var Category=require("./models/category")
+
 
 var routes=require("./config/routes")
 
@@ -23,11 +25,17 @@ app.use(nocache())
 
 app.use(function(req,res,next){
 
-    // console.log(sha1("admin"))
-    res.locals.demo="The Stepping Stone"
-    res.locals.session=req.session
-    
-    next();
+    Category.find({},function(req,result){
+
+        // console.log(sha1("admin"))
+        res.locals.demo="The Stepping Stone"
+        res.locals.session=req.session;
+        res.locals.menu_category=result
+        
+        next();
+
+    })
+
 })
 
 

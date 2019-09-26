@@ -6,7 +6,7 @@ var sha1=require("sha1")
 
 
 routes.get("/",function(req,res){
-    var pagedata={pagename:"login",msg:req.flash("msg")}
+    var pagedata={pagename:"login/index",msg:req.flash("msg")}
 
     res.render("admin/layout",pagedata)
 })
