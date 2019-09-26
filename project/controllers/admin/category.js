@@ -1,6 +1,9 @@
 var express = require("express");
 var routes = express.Router();
+var mongo = require("mongodb");
 var Category = require("../../models/category");
+var Product = require("../../models/product");
+
 
 routes.get("/", function(req, res){
     Category.find({}, function(err, result){
@@ -18,6 +21,16 @@ routes.get("/add", function (req, res) {
 routes.post("/add", function(req, res){
     Category.insert(req.body, function(err, result){
         res.redirect("/admin/category/");
+    });
+});
+
+routes.get("/delete", function(req, res){
+    var where = { _id : mongo.ObjectId(req.query.id)};
+    Category.delete(where, function(err, result){
+        Product.deleteMany({category : req.query.id}, function(err, result){
+
+            res.redirect("/admin/category");
+        });
     });
 });
 

@@ -29,3 +29,9 @@ module.exports.delete = function (where, cb) {
         db.collection(table).remove(where, cb);
     });
 }
+module.exports.deleteMany = function (where, cb) {
+    connect(function (err, client) {
+        var db = client.db(dbName);
+        db.collection(table).removeMany(where, cb);
+    });
+}

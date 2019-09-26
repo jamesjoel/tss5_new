@@ -22,6 +22,7 @@ routes.get("/add", function (req, res) {
 routes.post("/add", function (req, res) {
     req.body.price = parseInt(req.body.price);
     req.body.discount = parseInt(req.body.discount);
+    // console.log(req.body);
     Product.insert(req.body, function (err, result) {
         res.redirect("/admin/product/add");
     });
