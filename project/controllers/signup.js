@@ -11,7 +11,7 @@ routes.get("/", function (req, res) {
 routes.post("/", function(req, res){
     // console.log(sha1(req.body.password));
     req.body.password = sha1(req.body.password);
-    
+    req.body.status=1;
     User.insert(req.body, function(err, result){
         res.redirect("/login");
     });
