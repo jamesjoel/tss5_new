@@ -21,7 +21,7 @@
                                 <option>Select</option>
                                 <% result.forEach(function(category){ %>
 
-                                    <option><%= category.name %></option>
+                                    <option value="<%= category._id %>"><%= category.name %></option>
 
                                 <% }) %>
                             </select>
