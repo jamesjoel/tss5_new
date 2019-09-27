@@ -23,18 +23,21 @@ app.use(session({secret:"PRP"}))
 app.use(flash())
 app.use(nocache())
 
+
+
+
 app.use(function(req,res,next){
-
-    Category.find({},function(req,result){
-
+    Category.find({},function(err,result){
+        // console.log(result);
         // console.log(sha1("admin"))
-        res.locals.demo="The Stepping Stone"
+        res.locals.demo="The Stepping Stone";
         res.locals.session=req.session;
         res.locals.menu_category=result
         
         next();
 
     })
+   
 
 })
 

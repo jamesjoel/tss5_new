@@ -8,6 +8,8 @@
                 <tr>
                     <th>S.No</th>
                     <th>Category Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
 
                 <% result.forEach(function(category,index){ %>
@@ -15,6 +17,8 @@
                     <tr>
                         <td><%= index+1 %></td>
                         <td><%= category.name %></td>
+                        <td><a href="#" class="btn btn-success">Edit</a></td>
+                        <td><a href="/admin/category/delete?id=<%= category._id %>" class="btn btn-danger btn-">Delete</a></td>
                     </tr>
 
                 <% }) %>
