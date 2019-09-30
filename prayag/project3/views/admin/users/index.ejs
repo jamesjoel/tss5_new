@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <table class="table tabel-hover table-bordered table-dark table-stripped">
+                <tr>
+                    <th>S.No</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                    <th>Change</th>
+                </tr>
+                <% result.forEach(function(user,index){
+                    if(user.status==1){
+                        var status="Active"
+                    }else{
+                        var status="Deactive"
+                    }
+                    %>
+
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= user.name %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.contact %></td>
+                        <td><%= status %></td>
+                        <td><a href="/admin/users/change?id=<%= user._id %>&status=<%= user.status %>" class="btn btn-sm btn-warning">Change</a></td>
+
+                    </tr>
+
+                <% }) %>
+
+            </table>
+        </div>
+    </div>
+</div>
