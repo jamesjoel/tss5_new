@@ -7,6 +7,9 @@ var flash = require("express-flash");
 var nocache= require("nocache");
 
 var sha1 = require("sha1");
+var fileupload = require("express-fileupload");
+
+
 
 var Category = require("./models/category");
 
@@ -16,6 +19,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"));
 app.use(bodyParser());
 app.use(cookieParser());
+app.use(fileupload());
 app.use(session({ secret : "TSS"}));
 app.use(flash());
 app.use(nocache());
