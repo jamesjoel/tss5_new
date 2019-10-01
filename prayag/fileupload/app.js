@@ -34,11 +34,12 @@ app.post("/",function(req,res){
         if(size<=(1024*1024*2))  
         {
             photo.mv(__dirname+"/public/image/"+new_name,function(err){
+                console.log("----",err);
 
             })
         } 
         else{
-            console.log("size error")
+            console.log("size error");
         }
     }
     else{

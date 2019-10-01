@@ -6,8 +6,13 @@
                     <div class="card-header">
                         <b>Change Password Setting</b>
                     </div>
+                    <p class="text-center text-danger"><%= msg %></p>
                     <input type="hidden" name="id" value="<%= result._id %>">
                     <div class="card-body">
+                            <div class="form-group">
+                                <label>Current Password</label>
+                                <input type="password" class="form-control" name="current_password">
+                            </div>
                             <div class="form-group">
                                     <label>New Passowrd</label>
                                     <input type="password" class="form-control" name="password">
