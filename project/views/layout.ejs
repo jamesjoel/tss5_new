@@ -61,10 +61,13 @@
                         <div class="dropdown-menu">
                             <div class="dropdown-header">All Categories</div>
                             <% menu_category.forEach(function(category){ %>
-                                <a href="#" class="dropdown-item"><%= category.name; %></a>
+                                <a href="/category/<%= category.name %>" class="dropdown-item"><%= category.name; %></a>
 
                             <% }); %>
                         </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/cart" class="nav-link">My Cart(<%= totalItem %>)</a>
                     </li>
                 </ul>
             </div>

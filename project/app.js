@@ -27,9 +27,22 @@ app.use(nocache());
 
 
 app.use(function(req, res, next){
+    // console.log(req.cookies);
 
     // console.log(sha1("admin"));
     Category.find({}, function(err, result){
+        if ("cartItem" in req.cookies) 
+        {
+            var ids = req.cookies.cartItem;
+            var arr = ids.split("#");
+            res.locals.totalItem = arr.length;
+
+        }
+        else
+        {
+            res.locals.totalItem = 0;
+
+        }
         res.locals.demo="The Stepping Stone";
         res.locals.session=req.session;
         res.locals.menu_category=result;
