@@ -24,12 +24,19 @@ routes.post("/",function(req,res){
         }
        else{
            if(result[0].password==sha1(p)){
-               req.session.uid=result[0]._id
-               req.session.name=result[0].name
-               req.session.is_user_logged_in=true
+               if(result[0].status==1){
+                   req.session.uid=result[0]._id
+                   req.session.name=result[0].name
+                   req.session.is_user_logged_in=true
+    
+                   console.log(req.session)
+                   res.redirect("/user")
+                 }
+                 else{
+                     req.flash("msg","You are Deactive")
+                     res.redirect("/login")
 
-               console.log(req.session)
-               res.redirect("/user")
+                    }
            }
            else{
             //    console.log("password is incorrect.")

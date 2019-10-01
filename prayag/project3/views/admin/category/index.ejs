@@ -17,7 +17,7 @@
                     <tr>
                         <td><%= index+1 %></td>
                         <td><%= category.name %></td>
-                        <td><a href="#" class="btn btn-success">Edit</a></td>
+                        <td><a href="/admin/category/edit?id=<%= category._id %>" class="btn btn-success">Edit</a></td>
                         <td><a href="/admin/category/delete?id=<%= category._id %>" class="btn btn-danger btn-">Delete</a></td>
                     </tr>
 
