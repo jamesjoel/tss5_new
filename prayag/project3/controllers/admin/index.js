@@ -6,6 +6,7 @@ routes.use("/home",backdoor,require("./home"))
 routes.use("/category",backdoor,require("./category"))
 routes.use("/product",backdoor,require("./product"))
 routes.use("/users",backdoor,require("./users"))
+routes.use("/setting",backdoor,require("./setting"))
 
 function backdoor(req,res,next){
     if(!req.session.is_admin_logged_in){
