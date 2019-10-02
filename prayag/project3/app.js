@@ -8,6 +8,7 @@ var nocache=require("nocache")
 
 
 var sha1=require("sha1")
+var fileUpload=require("express-fileupload")
 
 var Category=require("./models/category")
 
@@ -19,6 +20,7 @@ app.set("view engine","ejs")
 app.use(express.static(__dirname+"/public"))
 app.use(bodyParser())
 app.use(cookieParser())
+app.use(fileUpload())
 app.use(session({secret:"PRP"}))
 app.use(flash())
 app.use(nocache())
