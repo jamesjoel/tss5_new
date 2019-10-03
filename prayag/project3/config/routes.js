@@ -7,6 +7,8 @@ routes.use("/",require("../controllers/home"))
 routes.use("/about",require("../controllers/about"))
 routes.use("/signup",require("../controllers/signup"))
 routes.use("/login",require("../controllers/login"))
+routes.use("/category",require("../controllers/category"))
+routes.use("/cart",require("../controllers/cart"))
 
 
 routes.use("/admin",require("../controllers/admin/index"))

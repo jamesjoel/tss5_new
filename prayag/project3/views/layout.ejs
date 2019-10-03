@@ -62,11 +62,16 @@
                            <% menu_category.forEach(function(category){ %>
                             
                             <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item"><%= category.name %></a>
+                            <a href="/category/<%= category.name %>" class="dropdown-item"><%= category.name %></a>
 
                            <% }) %>
                             
                         </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-block float-right">
+                    <li class="nav-item">
+                        <a href="/cart" class="nav-link">My Cart(<%= totalItem %>)</a>
                     </li>
                 </ul>
             </div>
