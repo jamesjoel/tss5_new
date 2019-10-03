@@ -8,6 +8,7 @@ var nocache=require("nocache")
 
 
 var sha1=require("sha1")
+var fileUpload=require("express-fileupload")
 
 var Category=require("./models/category")
 
@@ -19,6 +20,7 @@ app.set("view engine","ejs")
 app.use(express.static(__dirname+"/public"))
 app.use(bodyParser())
 app.use(cookieParser())
+app.use(fileUpload())
 app.use(session({secret:"PRP"}))
 app.use(flash())
 app.use(nocache())
@@ -28,13 +30,28 @@ app.use(nocache())
 
 app.use(function(req,res,next){
     Category.find({},function(err,result){
+        // console.log(req.cookies)
         // console.log(result);
         // console.log(sha1("admin"))
-        res.locals.demo="The Stepping Stone";
-        res.locals.session=req.session;
-        res.locals.menu_category=result
-        
-        next();
+
+        Category.find({},function(err,result){
+            if("cartItem" in req.cookies)
+            {
+                var ids =req.cookies.cartItem
+                var arr=ids.split("#")
+                res.locals.totalItem=arr.length
+            }
+            else
+            {
+                res.locals.totalItem=0
+            }
+            res.locals.demo="The Stepping Stone";
+            res.locals.session=req.session;
+            res.locals.menu_category=result
+            
+            next();
+        })
+
 
     })
    

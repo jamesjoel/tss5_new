@@ -16,14 +16,15 @@ routes.get("/",function(req,res){
 })
 
 routes.post("/",function(req,res){
-    req.body.password=sha1(req.body.password)
+    // req.body.password=sha1(req.body.password)
     req.body.current_password=sha1(req.body.current_password)
     console.log(req.body)
+    var obj ={password:sha1(req.body.password)}
     var where={_id:mongo.ObjectId(req.body.id)}
     Admin.find({},function(err,result1){
         if(result1[0].password==req.body.current_password){
 
-            Admin.update(where,req.body,function(err,result2){
+            Admin.update(where,obj,function(err,result2){
                 res.redirect("/admin")
             })
         }

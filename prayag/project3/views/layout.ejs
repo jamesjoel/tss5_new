@@ -1,11 +1,11 @@
 <html>
     <head>
         <title><%= title %></title>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
-        <link type="text/css" rel="stylesheet" href="css/font-awesome.css" />
-        <link type="text/css" rel="stylesheet" href="css/style.css" />
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.bundle.js"></script>
+        <link type="text/css" rel="stylesheet" href="/css/bootstrap.css" />
+        <link type="text/css" rel="stylesheet" href="/css/font-awesome.css" />
+        <link type="text/css" rel="stylesheet" href="/css/style.css" />
+        <script src="/js/jquery.js"></script>
+        <script src="/js/bootstrap.bundle.js"></script>
     </head>
     <body>
         <div class="container-fluid bg-danger">
@@ -62,11 +62,16 @@
                            <% menu_category.forEach(function(category){ %>
                             
                             <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item"><%= category.name %></a>
+                            <a href="/category/<%= category.name %>" class="dropdown-item"><%= category.name %></a>
 
                            <% }) %>
                             
                         </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-block float-right">
+                    <li class="nav-item">
+                        <a href="/cart" class="nav-link">My Cart(<%= totalItem %>)</a>
                     </li>
                 </ul>
             </div>
