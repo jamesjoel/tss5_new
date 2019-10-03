@@ -1,8 +1,32 @@
 var express = require("express");
 var routes = express.Router();
+var mongo = require("mongodb");
+var Product = require("../models/product");
 
 routes.get("/", function(req, res){
+    var ids = req.cookies.cartItem; // 5#7#12
+    var arr = ids.split("#"); // [5, 7, 12, 5]
+    var where_arr=[];
+    arr.forEach(function(x){
+        var obj = { _id : mongo.ObjectId(x)};
+        where_arr.push(obj);
+
+    });
     
+    Product.find({ $or : where_arr }, function(err, result){
+        // console.log(result);
+        var pagedata = {title : "My Cart", pagename : "cart/index", result : result, arr : arr};
+        res.render("layout", pagedata);
+    });
+
+
+});
+
+
+
+routes.get("/clearcart", function(req, res){
+    res.clearCookie("cartItem");
+    res.redirect("/");
 });
 
 

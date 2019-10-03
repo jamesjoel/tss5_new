@@ -1,0 +1,60 @@
+<div class="container" style="min-height: 600px;">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>My Cart</h1>
+            <a href="/cart/clearcart">Clear Cart</a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            
+            
+            <% 
+            var total_price = 0;
+            result.forEach(function(product, index){ 
+                var count = 0;  %>
+                
+                <%
+                arr.forEach(function(x, n){
+                    if(x==product._id)
+                    {
+                        count++;
+                        arr.splice(n, 1);
+                    }
+                });
+                %>
+                
+                <% 
+
+                var d = product.discount;
+                var net_price = product.price*d/100;
+                net_price = product.price-net_price;
+                total_price += net_price;
+                %>
+
+            
+            <div class="card mt-2">
+                <div class="card-header">
+                    
+                    <strong><%= index+1 %>. <%= product.name %></strong>
+                    <a href="/cart/delete_item/<%= product._id %>">Del</a>
+                    <p class="float-right m-0">
+                        Price : <%= product.price %>
+                    </p>
+                </div>
+                <div class="card-body">
+                    <p class="float-right m-0">
+                        Net Price : <%= net_price %>
+                    </p>
+                </div>
+                
+            </div>
+            <% }) %>
+            <p class="alert alert-success">
+                <strong>Total Price : <%= total_price %></strong>
+                <button class="btn btn-sm btn-dark">Checkout</button>
+            </p>
+        </div>
+    </div>
+</div>
