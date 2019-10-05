@@ -14,6 +14,7 @@ routes.use("/student", require("../controllers/student"));
 
 routes.use("/user", backdoor, require("../controllers/user"));
 routes.use("/setting", backdoor, require("../controllers/user"));
+routes.use("/cal", require("../controllers/cal"));
 
 
 function backdoor(req, res, next){
