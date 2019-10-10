@@ -1,0 +1,27 @@
+.header-color{
+    background-color: #ECFDFF !important;
+    
+    
+}
+.banner{
+    height: 200px;
+    background-size: 100% 100%;
+    background-image: url("../images/banner_img.jpg");
+}
+.btn-my{
+    background-image: linear-gradient(to bottom right, #FF0B58, #FF602C);
+    color: #FFF;
+    padding: 10px 40px;
+}
+.btn-my:hover{
+    
+    background-image: linear-gradient(to bottom right, #FF602C, #FF0B58);
+    color: #FFF;
+}
+.product-box:hover{
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+
+}
+.small-text{
+    font-size: 12px;
+}
