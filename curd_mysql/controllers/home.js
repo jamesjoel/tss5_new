@@ -24,6 +24,21 @@ routes.post("/", function(req, res){
         res.redirect("/");
     });
 });
+routes.get("/edit/:id", function(req, res){
+    var id = req.params.id;
+    Student.find_by_id(id, function(err, result){
+        result = JSON.parse(JSON.stringify(result));
+        console.log(result);
+        var pagedata = { title: "Home", pagename: "edit", result : result[0]};
+        res.render("layout", pagedata);
+    })
+});
 
+routes.post("/edit/:id", function(req, res){
+    var id = req.params.id;
+    Student.update(id, req.body, function(err, result){
+        res.redirect("/");
+    });
+});
 
 module.exports=routes;

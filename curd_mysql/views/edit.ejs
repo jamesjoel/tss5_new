@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Edit Student</h2>
+            <form action="/edit/<%= result.id %>" method="post">
+
+                <!-- <input type="hidden" name="id" value="<%= result.id %>" -->
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" value="<%= result.name %>" name="name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" name="age" value="<%= result.age %>" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <select class="form-control" name="city">
+                        <option>Select</option>
+                        <option <% if(result.city=="Indore") {%> selected="selected" <% } %>>Indore</option>
+                        <option <% if(result.city=="Ujjain") {%> selected="selected" <% } %>>Ujjain</option>
+                        <option <% if(result.city=="Bhopal") {%> selected="selected" <% } %>>Bhopal</option>
+                        <option <% if(result.city=="Mumbai") {%> selected="selected" <% } %>>Mumbai</option>
+                    </select>
+            
+                </div>
+            
+            
+            
+                    
+                    <button type="submit" class="btn btn-success">Submit</button>
+            
+            </form>
+        </div>
+    </div>
+</div>
+            
+            
+            

@@ -7,6 +7,15 @@ module.exports.find_all=function(cb){
         con.query(que, cb);
     });
 }
+module.exports.find_by_id = function (id, cb) {
+
+    con.connect(function (err) {
+        var que = "SELECT * FROM student WHERE id="+id;
+        con.query(que, cb);
+    });
+}
+
+
 
 module.exports.insert = function (obj, cb) {
 
