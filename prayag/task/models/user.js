@@ -5,6 +5,7 @@ var table="user"
 
 
 module.exports.find=function(where,cb){
+    // console.log("****************", where);
     connect(function(err,client){
         var db=client.db(dbName)
         
@@ -26,7 +27,7 @@ module.exports.update=function(where,obj,cb){
     })
 }
 
-module.exports.find=function(where,cb){
+module.exports.delete=function(where,cb){
     connect(function(err,client){
         var db=client.db(dbName)
         db.collection(table).remove(where,cb)
