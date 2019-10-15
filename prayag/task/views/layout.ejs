@@ -13,13 +13,31 @@
                             <div class="col-md-6  font-weight-bold m-0 p-2 text-light"><i class="fa fa-shopping-cart"></i> The Best Fashion Shopping site.</div>
                             <div class="col-md-6">
                                 <ul class=" nav justify-content-end">
-                                    <li class="nav-item">
+
+                                        <% if(session.is_user_logged_in){ %>
+                                            <button class="btn btn-primary"><%= session.name %></button>
+                                            <li class="nav-item">
+                                                <a href="/logout" class="nav-link text-light p-1">Logout</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="/profile" class="nav-link text-light p-1">My Profile</a>
+                                            </li>
+                                        <% }else{ %>
+                                            <li class="nav-item">
+                                                <a href="/login" class="nav-link text-light p-1"><i class="fa fa-lock"></i> Login</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="/signup" class="nav-link text-light p-1"><i class="fa fa-user"></i> Signup</a>
+                                            </li>
+                                        <% } %>
+
+                                    <!-- <li class="nav-item">
                                         <a href="/login" class="nav-link text-light "><i class="fa fa-lock"></i> Login</a>
                                     </li>
             
                                     <li class="nav-item">
                                         <a href="/signup" class="nav-link text-light"><i class="fa fa-user"></i> Signup</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>
