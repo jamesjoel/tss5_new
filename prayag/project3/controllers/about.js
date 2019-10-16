@@ -36,7 +36,7 @@ routes.get("/",function(req,res){
     // ]
 
     Product.lookup(function(err,result){
-        console.log(result)
+        console.log(result[0].cateData)
     })
 
 })
