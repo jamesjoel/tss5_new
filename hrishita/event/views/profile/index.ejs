@@ -1,0 +1,22 @@
+<h1>My Events..</h1>
+<table class="table table-bordered table-info">
+    <% for(var i=1; i<=31; i++)
+    { %>
+
+        <td style="min-width: 100;">
+        <a href="/add_event/add?n=<%= i %>"><%= i %></a><br> 
+        <% result.forEach(function(eve){
+            if(eve.date==i)
+            { %>
+                <%= eve.title %>
+          <%  }
+        }); %>
+        </td>
+        <%
+            if(i%7==0)
+            { %>
+                <tr></tr>
+         <% }    
+    }  %>
+</table>
+     

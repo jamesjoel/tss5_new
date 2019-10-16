@@ -1,0 +1,23 @@
+<form action="/login" method="POST">
+    <div class="card">
+        <div class="card-header bg-danger">
+            Login User
+        </div>
+        <div class="card-body bg-light">
+            <div class="form-group">
+                <label>Username/Email</label>
+                <input type="text" class="form-control" name="email">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+        </div>
+        <div class="card-footer bg-danger">
+            <input type="submit" value="Login" class="form-control bg-danger border-0">
+        </div>
+        <p class="text-danger text-center p-0 m-0">
+            <%= msg %>
+        </p>
+    </div>
+</form>
