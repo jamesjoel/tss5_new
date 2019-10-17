@@ -17,7 +17,7 @@ routes.post("/",function(req,res){
     // console.log(req.body);
     
     User.find({email:e},function(err,result){
-        console.log("-----",result);
+        // console.log("-----",result);
         if(result.length==0){
             req.flash("msg","This Username and Password is Incorrect!")
             res.redirect("/login")
