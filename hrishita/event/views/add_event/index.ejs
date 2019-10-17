@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header bg-info">
+        Add Event
+    </div>
+    <div class="card-body bg-light">
+        <form action="/add_event/add" method="POST">
+            <div class="form-group">
+                <input type="hidden" name="date" value="<%= n%>">
+            </div>
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" name="description"></textarea>
+            </div>
+    </div>
+    <div class="card-footer">
+        <input type="submit" value="Add" class="bg-info border-0">
+    </div>
+        </form>
+</div>
+  

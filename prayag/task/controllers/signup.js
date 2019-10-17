@@ -21,7 +21,7 @@ routes.post("/",function(req,res){
             console.log("error in inserting data !!")
         }
         else{
-            res.redirect("/")
+            res.redirect("/login")
         }
     })
 })

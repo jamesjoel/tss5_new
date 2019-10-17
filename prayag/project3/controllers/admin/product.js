@@ -28,6 +28,7 @@ routes.post("/add",function(req,res){
             req.body.image=fileObj.name
             req.body.price=parseInt(req.body.price)
             req.body.discount=parseInt(req.body.discount)
+            req.body.category=mongo.ObjectId(req.body.category)
             image.mv(upload_path,function(err){
                 Product.insert(req.body,function(err,result){
                     res.redirect("/admin/product/")
