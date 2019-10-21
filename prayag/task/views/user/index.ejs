@@ -12,7 +12,7 @@
                     
                     <td style="padding: 30px"><a href="/user/event?n=<%= i %>" class="text-dark"><%= i %></a>
                     <br>
-                    <% if(result1._id==result.uid){ 
+                    <% 
                          result.forEach(function(event){ 
                         
                             if(event.date==i){ %>
@@ -21,7 +21,7 @@
                            <% }
                          }) %>
 
-                    <% } %>
+                    
                     
                     </td>
 
