@@ -1,0 +1,39 @@
+<div class="container" style="min-height: 500px">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Users Account</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-bordered table-info">
+                <% for(var i=1; i<=31; i++)
+                { %>
+                    
+                    <td style="padding: 30px"><a href="/user/event?n=<%= i %>" class="text-dark"><%= i %></a>
+                    <br>
+                    <% result.forEach(function(event){ 
+                        if(event.date==i){ %>
+                            
+                            <p class="m-0 p-0 text-danger" title="<%= event.text %>" style="font-size:14px "><%= event.name %></p>
+                       <% }
+                     }) %>
+                    
+                    </td>
+
+                    <%
+                    if(i%7==0)
+                    { %>
+                        <tr></tr>
+                    
+                      <% 
+                    }
+                    
+                 }
+                 %>
+                
+            </table>
+        
+        </div>
+    </div>
+</div>

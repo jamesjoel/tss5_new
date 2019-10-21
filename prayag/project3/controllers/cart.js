@@ -23,7 +23,7 @@ routes.get("/",function(req,res){
 
 routes.get("/delete_item/:id",function(req,res){
     console.log(req.params)
-    var where={_id:mongo.ObjectId(req.params)}
+    var where={_id:mongo.ObjectId(req.params.id)}
     Product.delete(where,function(err,result){
         res.redirect("/cart")
     })

@@ -1,7 +1,42 @@
 var connect = require("../config/connect");
-
+var mongo = require("mongodb");
 var dbName = "tss5";
 var table = "product";
+
+
+module.exports.addNewField = function(cb){
+    connect(function(err, client){
+        var db = client.db(dbName); 
+        db.collection(table).aggregate([
+            {
+                $addFields : { "demo" : "rohit" }
+            }
+        ]).toArray(cb);
+
+
+    });
+}
+module.exports.lookup = function(cb){
+    connect(function (err, client) {
+        var db = client.db(dbName);
+        db.collection(table).aggregate([
+            {
+                $lookup: {
+                    from : "category",
+                    localField : "category",
+                    foreignField : "_id",
+                    as : "cateData"
+
+                }
+            }
+        ]).toArray(cb);
+
+
+    });
+}
+
+
+
 
 
 module.exports.find = function (where, cb) {
