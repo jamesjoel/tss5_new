@@ -1,13 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
+interface myData{
+  name : string,
+  age : number,
+  city : string
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.sass']
 })
+
+
 export class HomeComponent implements OnInit {
 
-  data=[
+  data:myData[]=[
     {
       name : "Rohit",
       age : 25,
@@ -31,6 +38,7 @@ export class HomeComponent implements OnInit {
 
   ];
 
+  name:string="rohit";
 
   constructor() { }
 
