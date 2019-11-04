@@ -1,0 +1,22 @@
+<select>
+    <option *ngFor="let i of months">{{ i }}</option>
+</select>
+<button (click)="demo()">CLICK</button>
+<br />
+<span *ngIf="isavailable;then cond1 else cond2"></span>
+<ng-template #cond1>This is TRUE</ng-template>
+<ng-template #cond2>This is FALSE</ng-template>
+
+
+<!-- <ng-template [ngIf]="isavailable" [ngIfElse]="notShow">
+    <h1>Hello world</h1>
+</ng-template>
+<ng-template #notShow>
+    <h1>hellow world ------ </h1>
+</ng-template> -->
+<ng-template [ngIf]="isavailable" [ngIfElse]="show">
+    HELLO WORLD
+</ng-template>
+<ng-template #show>
+    HELLO WORLD --------------
+</ng-template>
