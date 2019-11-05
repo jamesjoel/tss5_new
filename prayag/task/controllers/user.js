@@ -9,18 +9,16 @@ var mongo=require("mongodb")
 routes.get("/",function(req,res){
 
     var where=mongo.ObjectId(req.session.uid)
-    // User.find({_id:where},function(err,result1){
-        // console.log(result1)
         Event.find({uid : where},function(err,result){
-            console.log(result)
-            var pagedata={title:"Profile Page",pagename:"user/index",result:result,result1:result1}
+            // console.log(result)
+            var pagedata={title:"Profile Page",pagename:"user/index",result:result}
             res.render("layout",pagedata)
 
         })
 
     })
 
-// })
+
 
 
 routes.get("/event",function(req,res){

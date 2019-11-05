@@ -1,0 +1,34 @@
+<nav class="navbar bg-dark navbar-expand-sm navbar-dark">
+    <a href="#" class="navbar-brand">Navbar</a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#mymenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mymenu">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a routerLink="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/contact" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container" style="min-height: 600px">
+
+    <router-outlet></router-outlet>
+
+</div>
+
+<div class="container-fluid bg-dark">
+    <div class="container">
+        <p class="text-center text-light m-0">
+            This  is Footer
+        </p>
+    </div>
+</div>
