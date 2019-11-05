@@ -1,7 +1,42 @@
 
-<h1>{{ name }}</h1>
 
-<h2>This is Home Page</h2>
+<div class="container">
+    <h1>{{ firstName }}</h1>
+
+    <input type="text" value="{{ firstName }}" />
+    <br />
+    <br />
+    <input type="text" [(ngModel)]="firstName" />
+    
+
+
+
+    <h2>This is Home Page</h2>
+    
+<button (click)="demo()" class="btn btn-primary">OK</button>
+<button (click)="demo2()" class="btn btn-primary">OK-2</button>
+<br />
+<br />
+<h2>{{ check }}</h2>
+<h2>{{ check2 }}</h2>
+<br />
+<ng-template [ngIf]="check2" [ngIfElse]="box">
+
+    <h2>JAMES</h2>
+</ng-template>
+
+<ng-template #box>
+    <h2>NEHA</h2>
+</ng-template>
+
+
+
+
+<br />
+<div *ngIf="check; then cond1 else cond2"></div>
+
+<ng-template #cond1>
+
 <table class="table table-hover table-dark">
     <tr>
         <th>S.No</th>
@@ -15,8 +50,33 @@
         <td>{{ x.age }}</td>
         <td>{{ x.city }}</td>
     </tr>
+    
 
-
-
+    
 </table>
+</ng-template>
 
+<ng-template #cond2>
+    <h1>HELLO WORLD</h1>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
