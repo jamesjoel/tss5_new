@@ -1,18 +1,78 @@
-<h2>{{ name  }}</h2>
-<h3>This is Home Page</h3>
+<!-- <h2>{{ name  }}</h2> -->
+<!-- <h3>This is Home Page</h3> -->
 
-<table class="table table-dark table-bordered table-hover table-stripped">
-    <tr>
-        <th>S.No</th>
-        <th>Name</th>
-        <th>Age</th>
-        <th>City</th>
-    </tr>
+<div class="container">
 
-    <tr *ngFor="let x of arr; let n=index">
-        <td>{{ n+1 }}</td>
-        <td>{{ x.name }}</td>
-        <td>{{ x.age }}</td>
-        <td>{{ x.city }}</td>
-    </tr>
-</table>
+    <h1>{{ firstName }}</h1>
+
+    <input type="text" value="{{ firstName }}">
+    
+    <br>
+    <br>
+    <input type="text" [(ngModel)]="firstName">
+    <br>
+    <br>
+    <br>
+    
+
+   <button (click)="demo()" class="btn btn-primary">Ok</button>
+   <button (click)="demo2()" class="btn btn-primary">Ok</button>
+    <br>
+    <br>
+    <br>
+        <h2>{{ check }}</h2>   
+        <h2>{{ check2 }}</h2>   
+    <br>
+    <br>
+    <ng-template [ngIf]="check2" [ngIfElse]="box">
+        <h2>Prayag</h2>
+    </ng-template>
+
+    <ng-template #box>
+        <h2>Rohit</h2>
+    </ng-template>
+
+
+
+    <!-- <table *ngIf="check" class="table table-dark table-bordered table-hover table-stripped">
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        
+        <tr *ngFor="let x of arr; let n=index">
+            <td>{{ n+1 }}</td>
+            <td>{{ x.name }}</td>
+            <td>{{ x.age }}</td>
+            <td>{{ x.city }}</td>
+        </tr>
+    </table> -->
+
+    <div *ngIf="check; then cond1 else cond2"></div>
+
+    <ng-template #cond1>
+
+        <table class="table table-dark table-bordered table-hover table-stripped">
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+            
+            <tr *ngFor="let x of arr; let n=index">
+                <td>{{ n+1 }}</td>
+                <td>{{ x.name }}</td>
+                <td>{{ x.age }}</td>
+                <td>{{ x.city }}</td>
+            </tr>
+        </table>
+    </ng-template>
+
+    <ng-template #cond2>
+        <h2>Hello World</h2>
+    </ng-template>
+    
+</div>

@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   name = "rohit";
+  firstName= "Virat"
+  check= true;
+  check2= true;
   arr=[
     {
       name: "rohit",
@@ -41,4 +44,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  demo(){
+    // console.log("hello World")
+    // this.check=false;
+    this.check=!this.check;
+  }
+  demo2(){
+    this.check2=!this.check2;
+  }
 }
