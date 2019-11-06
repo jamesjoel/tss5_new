@@ -3,7 +3,8 @@
     <div>{{ newStudent|json }}</div>
     <div class="row">
         <div class="col-md-10 offset-md-1">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Add New</button>
+            <button (click)="askAdd()" class="btn btn-primary" data-toggle="modal" data-target="#addModal">Add New</button>
+            <br />
             <br />
             <table class="table table-hover table-dark table-bordered table-striped">
                 <tr>
@@ -11,23 +12,45 @@
                     <th>Name</th>
                     <th>Age</th>
                     <th>Fee</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
                 <tr *ngFor="let x of studentArr; let n = index">
                     <td>{{ n+1 }}</td>
                     <td>{{ x.name }}</td>
                     <td>{{ x.age }}</td>
                     <td>{{ x.fee }}</td>
+                    <td><button data-toggle="modal" data-target="#delModal" class="btn btn-danger btn-sm" (click)="askDelete(x)">Delete</button></td>
+                    <td><button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#addModal" (click)="askEdit(x)">Edit</button></td>
                 </tr>
             </table>
         </div>
     </div>
 </div>
 
+<div class="modal fade" id="delModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Delete !</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are You Sure Want to Delete <b>{{ askStuObj.name }}</b></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal" (click)="delete()">Delete</button>
+                <button class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="modal fade" id="addModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Add New Student</h3>
+                <h3>{{ newStudent.id ? "Update" : "Add New" }} Student</h3>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -44,7 +67,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button data-dismiss="modal" (click)="save()" class="btn btn-primary">Add</button>
+                <button data-dismiss="modal" (click)="save()" class="btn btn-primary">{{ newStudent.id ? "Update" : "Add" }}</button>
                 <button data-dismiss="modal" class="btn btn-danger">Close</button>
                 
             </div>
