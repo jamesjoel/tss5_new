@@ -73,6 +73,11 @@ export class StudentlistComponent implements OnInit {
           this.studentArr[i]=this.newStudent;
         }
       }
+      this.newStudent = {
+        name: "",
+        age: null,
+        fee: null
+      }
     }
     else{
 
