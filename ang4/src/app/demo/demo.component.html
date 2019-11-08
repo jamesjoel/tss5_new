@@ -1,0 +1,18 @@
+<h1>DEMO (Parent) Compoent</h1>
+Full Name<input type="Text" [(ngModel)]="newStudent.name" />
+<Br />
+<br />
+Age <input type="text" [(ngModel)]="newStudent.age" />
+<br />
+<Br />
+<button (click)="add()">Add</button>
+
+
+
+<app-mini-demo [cName]="name"
+               [cNewStudent]="sendStudent"
+></app-mini-demo>
+
+
+
+

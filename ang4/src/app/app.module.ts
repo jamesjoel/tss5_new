@@ -12,6 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { StudentlistComponent } from './studentlist/studentlist.component';
 import { MydirDirective } from './mydir.directive';
+import { DemoComponent } from './demo/demo.component';
+import { MiniDemoComponent } from './mini-demo/mini-demo.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { MydirDirective } from './mydir.directive';
     ContactComponent,
     StudentlistComponent,
     MydirDirective,
+    DemoComponent,
+    MiniDemoComponent,
     
   ],
   imports: [
