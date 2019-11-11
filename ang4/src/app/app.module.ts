@@ -14,6 +14,12 @@ import { StudentlistComponent } from './studentlist/studentlist.component';
 import { MydirDirective } from './mydir.directive';
 import { DemoComponent } from './demo/demo.component';
 import { MiniDemoComponent } from './mini-demo/mini-demo.component';
+import { MessageComponent } from './message/message.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { LogoComponent } from './logo/logo.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductBoxComponent } from './product-box/product-box.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +31,12 @@ import { MiniDemoComponent } from './mini-demo/mini-demo.component';
     MydirDirective,
     DemoComponent,
     MiniDemoComponent,
+    MessageComponent,
+    HeaderComponent,
+    FooterComponent,
+    LogoComponent,
+    ProductsComponent,
+    ProductBoxComponent,
     
   ],
   imports: [

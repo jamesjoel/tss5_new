@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  msg:string="This is About Page Message";
   constructor() { }
 
   ngOnInit() {

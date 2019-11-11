@@ -1,0 +1,8 @@
+<div class="container mt-4" style="min-height: 600px">
+    <div class="row">
+        <div *ngFor="let x of data" class="col-md-4">
+            
+            <app-product-box [childProduct]="x"></app-product-box>
+        </div>
+    </div>
+</div>

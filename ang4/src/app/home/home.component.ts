@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  msg:string="This is Home Message.....";
   name = "rohit";
   check=true;
   check2=true;

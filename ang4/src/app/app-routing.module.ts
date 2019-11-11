@@ -5,7 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { StudentlistComponent } from './studentlist/studentlist.component';
 import { DemoComponent } from './demo/demo.component';
-
+import { ProductsComponent } from './products/products.component';
 
 
 
@@ -17,6 +17,11 @@ const routes: Routes = [
   {
     path : "demo",
     component : DemoComponent
+  },
+  {
+    path : "products",
+    component : ProductsComponent
+
   },
   {
     path : "contact",
