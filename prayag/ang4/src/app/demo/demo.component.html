@@ -1,0 +1,30 @@
+<h1>Demo (Parent) Component</h1>
+<app-message
+            [childMsg]="msg"
+></app-message>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" [(ngModel)]="newStudent.name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Age</label>
+                <input type="text" [(ngModel)]="newStudent.age" class="form-control" >
+            </div>
+            <div class="form-group">
+                <input type="button" (click)="add()" class="btn btn-primary" value="Add">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <app-mini-demo [cName]="name"
+                       [cNewStudent]="sendStudent"
+                       
+        ></app-mini-demo>
+    </div>
+</div>
+
+
+
