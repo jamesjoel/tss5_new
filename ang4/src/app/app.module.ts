@@ -20,6 +20,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LogoComponent } from './logo/logo.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductBoxComponent } from './product-box/product-box.component';
+import { FatherComponent } from './father/father.component';
+import { KidsComponent } from './kids/kids.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { ProductBoxComponent } from './product-box/product-box.component';
     LogoComponent,
     ProductsComponent,
     ProductBoxComponent,
+    FatherComponent,
+    KidsComponent,
     
   ],
   imports: [

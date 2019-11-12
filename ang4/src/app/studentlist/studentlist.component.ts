@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from '../models/student.interface';
 
-interface student{
-  id? : number,
-  name : string,
-  age : number,
-  fee : number
-  // address? : string
-  // color[] : any
-}
+// interface student{
+//   id? : number,
+//   name : string,
+//   age : number,
+//   fee : number
+//   // address? : string
+//   // color[] : any
+// }
 
 
 @Component({
@@ -17,13 +18,13 @@ interface student{
 })
 export class StudentlistComponent implements OnInit {
 
-  askStuObj:student={
+  askStuObj:Student={
     name : "",
     age : null,
     fee : null
   };
 
-  studentArr:student[] = [
+  studentArr:Student[] = [
     {
       id : 1,
       name : "rohit",
@@ -49,7 +50,7 @@ export class StudentlistComponent implements OnInit {
       fee : 4900
     }
   ];
-  newStudent:student={
+  newStudent:Student={
     name : "",
     age : null,
     fee : null
@@ -100,14 +101,14 @@ export class StudentlistComponent implements OnInit {
     }
     */
   }
-  askDelete(a:student){
+  askDelete(a:Student){
     this.askStuObj=a; 
   }
   delete(){
     var n = this.studentArr.indexOf(this.askStuObj);
     this.studentArr.splice(n, 1);
   }
-  askEdit(a:student){
+  askEdit(a:Student){
     // this.newStudent=a;
     this.newStudent = Object.assign({}, a);
   }
