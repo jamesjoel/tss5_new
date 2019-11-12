@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+
+  msg:string="This is Contact Page Message."
+
+
   constructor() { }
 
   ngOnInit() {

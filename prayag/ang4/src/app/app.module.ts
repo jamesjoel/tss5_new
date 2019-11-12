@@ -10,6 +10,15 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { StudentlistComponent } from './studentlist/studentlist.component';
+import { MydirDirective } from './mydir.directive';
+import { DemoComponent } from './demo/demo.component';
+import { MiniDemoComponent } from './mini-demo/mini-demo.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { LogoComponent } from './logo/logo.component';
+import { MessageComponent } from './message/message.component';
+import { ProductComponent } from './product/product.component';
+import { ProductBoxComponent } from './product-box/product-box.component';
 
 
 @NgModule({
@@ -18,7 +27,16 @@ import { StudentlistComponent } from './studentlist/studentlist.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    StudentlistComponent
+    StudentlistComponent,
+    MydirDirective,
+    DemoComponent,
+    MiniDemoComponent,
+    HeaderComponent,
+    FooterComponent,
+    LogoComponent,
+    MessageComponent,
+    ProductComponent,
+    ProductBoxComponent
   ],
   imports: [
     BrowserModule,

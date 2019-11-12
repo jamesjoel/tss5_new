@@ -8,14 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
 
-  
-  // h:number=25;
-  str:string="HEADER";
+  // h:number=45;
   h:any={
-    "color" : "red",
-    "font-size":"25px",
-    "background-color":"yellow"
-  };
+    "color": "yellow",
+    "font-size": "45px",
+    "background-color": "green"
+  }
 
   constructor() { }
 
