@@ -19,6 +19,8 @@ import { LogoComponent } from './logo/logo.component';
 import { MessageComponent } from './message/message.component';
 import { ProductComponent } from './product/product.component';
 import { ProductBoxComponent } from './product-box/product-box.component';
+import { FatherComponent } from './father/father.component';
+import { KidsComponent } from './kids/kids.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { ProductBoxComponent } from './product-box/product-box.component';
     LogoComponent,
     MessageComponent,
     ProductComponent,
-    ProductBoxComponent
+    ProductBoxComponent,
+    FatherComponent,
+    KidsComponent
   ],
   imports: [
     BrowserModule,

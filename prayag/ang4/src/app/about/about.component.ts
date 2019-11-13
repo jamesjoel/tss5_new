@@ -8,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class AboutComponent implements OnInit {
 
 
-
+  name:string="Rohit"
+  a;
   msg:string="this is About Page Message."
 
   constructor() { }
 
   ngOnInit() {
+  }
+  demo(){
+    this.name=this.a;
   }
 
 }
