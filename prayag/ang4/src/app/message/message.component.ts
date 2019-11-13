@@ -10,6 +10,7 @@ export class MessageComponent implements OnInit {
 
 
   @Input() childMsg:string;
+  @Input() myVar:string;
   constructor() { }
 
   ngOnInit() {

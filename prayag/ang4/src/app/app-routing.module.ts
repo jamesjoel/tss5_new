@@ -6,11 +6,16 @@ import { ContactComponent } from './contact/contact.component';
 import { StudentlistComponent } from './studentlist/studentlist.component';
 import { DemoComponent } from './demo/demo.component';
 import { ProductComponent } from './product/product.component';
+import { FatherComponent } from './father/father.component';
 
 const routes: Routes = [
   {
     path: "about",
     component: AboutComponent
+  },
+  {
+    path: "childtoparent",
+    component: FatherComponent
   },
   {
     path: "contact",
