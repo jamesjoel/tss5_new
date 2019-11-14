@@ -21,6 +21,8 @@ import { ProductComponent } from './product/product.component';
 import { ProductBoxComponent } from './product-box/product-box.component';
 import { FatherComponent } from './father/father.component';
 import { KidsComponent } from './kids/kids.component';
+import { ChildViewComponent } from './child-view/child-view.component';
+import { ChildViewBoxComponent } from './child-view-box/child-view-box.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { KidsComponent } from './kids/kids.component';
     ProductComponent,
     ProductBoxComponent,
     FatherComponent,
-    KidsComponent
+    KidsComponent,
+    ChildViewComponent,
+    ChildViewBoxComponent
   ],
   imports: [
     BrowserModule,

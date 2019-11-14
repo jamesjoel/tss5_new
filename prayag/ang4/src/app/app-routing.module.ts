@@ -7,11 +7,16 @@ import { StudentlistComponent } from './studentlist/studentlist.component';
 import { DemoComponent } from './demo/demo.component';
 import { ProductComponent } from './product/product.component';
 import { FatherComponent } from './father/father.component';
+import { ChildViewComponent } from './child-view/child-view.component';
 
 const routes: Routes = [
   {
     path: "about",
     component: AboutComponent
+  },
+  {
+    path: "childview",
+    component: ChildViewComponent
   },
   {
     path: "childtoparent",
