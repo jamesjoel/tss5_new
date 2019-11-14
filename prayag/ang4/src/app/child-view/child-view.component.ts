@@ -1,33 +1,30 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { ChildViewBoxComponent } from '../child-view-box/child-view-box.component';
+//https://stackoverflow.com/questions/34364880/expression-has-changed-after-it-was-checked
+import { Component, OnInit, ChangeDetectorRef, AfterViewInit, ViewChild } from '@angular/core';
+
+import { My3Component } from '../my3/my3.component';
 
 @Component({
+
   selector: 'app-child-view',
-  // templateUrl: './child-view.component.html',
-  template : `<h1>{{ newName }}</h1>`,
+  templateUrl: './child-view.component.html',
   styleUrls: ['./child-view.component.scss']
 })
-export class ChildViewComponent implements AfterViewInit, OnInit {
+export class ChildViewComponent implements OnInit, AfterViewInit {
+  @ViewChild(My3Component, {static : false}) myData; 
 
-  @ViewChild(ChildViewBoxComponent, { static : false}) mydata;
+  newName="JAMES";
 
-  demo:string="rohit";
-  demo2:{
-    name: "",
-    age: null,
-    city: ""
-  };
-  newName:string="rohit";
+  
+  constructor(private ref : ChangeDetectorRef) { }
 
-  ngAfterViewInit(){
-    console.log(this.mydata.name);
-    //this.demo=this.childData.myStr;
-    //this.demo2=this.childData.obj;
-  }
-
-  // constructor() { }
-
+  
   ngOnInit() {
   }
+  ngAfterViewInit(){
+    this.newName = this.myData.name;
+    this.ref.detectChanges();
+  }
+
+
 
 }

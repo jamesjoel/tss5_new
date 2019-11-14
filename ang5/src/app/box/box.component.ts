@@ -13,6 +13,7 @@ export class BoxComponent implements OnInit {
     age : 25,
     city : "indore"
   }
+  
 
   constructor() { }
 
