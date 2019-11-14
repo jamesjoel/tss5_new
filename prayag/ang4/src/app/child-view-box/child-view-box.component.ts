@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ChildViewBoxComponent implements OnInit {
 
 
-
+  name:string="rohit";
   myStr="This is Child Variable."
   obj={
     name:"rohit",
