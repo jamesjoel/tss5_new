@@ -1,7 +1,12 @@
-<h2>{{ demo }}</h2>
-<pre>{{ demo2 | json }}</pre>
-<h3>{{ demo2.name }}</h3>
+<!-- <h2>{{ demo }}</h2> -->
+<!-- <pre>{{ demo2 | json }}</pre>
+<h3>{{ demo2.name }}</h3> -->
 <app-box></app-box>
+
+<button (click)="getStudentData()">Get Data</button>
+
+<pre>{{ newObj|json }}</pre>
+
 <div [ngSwitch]="a">
     <h2 *ngSwitchCase="'yellow'">This is Yellow</h2>
     <h2 *ngSwitchCase="'blue'">This is Blue</h2>
