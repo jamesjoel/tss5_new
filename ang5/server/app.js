@@ -23,7 +23,8 @@ app.get("/api/student", function(req, res){
         }
     ]
 
-    res.send(JSON.stringify(data));
+    // res.send(JSON.stringify(data));
+    res.json(data);
 });
 
 
