@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+                <Br />
+                <button data-toggle="modal" data-target="#addModal" class="btn btn-primary">Add</button>
+                <Br />
+            <table class="table table-hover table-bordered table-dark table-striped">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+                <tr *ngFor="let x of allStudent; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.age }}</td>
+                    <td>{{ x.city }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<app-addstudent (goStudent)="comeStudent($event)"></app-addstudent>

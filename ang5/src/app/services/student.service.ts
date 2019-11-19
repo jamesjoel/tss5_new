@@ -29,7 +29,7 @@ export class StudentService {
 
   getStudent(){
     // return this.studentsArr;
-    return this._http.get("http://localhost:3000/api/student");
+    return this._http.get<stu>("http://localhost:3000/api/student");
   }
 
   

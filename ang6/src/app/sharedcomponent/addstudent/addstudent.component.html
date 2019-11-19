@@ -1,0 +1,35 @@
+<div class="modal fade" id="addModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <pre>{{ student | json }}</pre>
+
+            <div class="modal-header">
+                <h2>Add New Student</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input  class="form-control" [(ngModel)]="student.name" type="text" />
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input  class="form-control" [(ngModel)]="student.age" type="text" />
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <select class="form-control" [(ngModel)]="student.city">
+                        <option value="">Select</option>
+                        <option value="indore">Indore</option>
+                        <option value="bhopal">Bhopal</option>
+                        <option value="mumbai">Mumbai</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" (click)="send()" data-dismiss="modal">Save</button>
+                <button class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
