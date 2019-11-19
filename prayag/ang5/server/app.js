@@ -1,5 +1,10 @@
 var express =require("express");
 var app = express();
+var cors=require("cors");
+
+
+app.use(cors());
+
 
 app.get("/api/student",function(req,res){
     var data = [
@@ -12,13 +17,18 @@ app.get("/api/student",function(req,res){
             name: "Monika",
             age:23,
             city:"bhopal"
+        },
+        {
+            name:"ram",
+            age: 25,
+            city: "chennai"
         }
     ]
-    res.send(data);
+    res.json(data);
 });
 
 
-
+ 
 
 
 

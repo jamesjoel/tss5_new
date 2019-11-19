@@ -11,7 +11,7 @@ interface stu {
   providedIn: 'root'
 })
 export class StudentService {
-
+ 
   constructor(private _http : HttpClient){}
 
   studentsArr=[

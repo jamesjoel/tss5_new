@@ -65,7 +65,7 @@ newStudent:student={
 
     // console.log(this.newStudent);
     if(this.newStudent.id){
-      for(var i=0; i<this.studentArr.length;i++)
+      for(var i=0; i<this.studentArr.length; i++)
       {
         if(this.studentArr[i].id==this.newStudent.id)
         {
