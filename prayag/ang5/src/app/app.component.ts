@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { StudentService } from './services/student.service';
+import { Student } from './models/student.models'
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ang5';
+
+newObj:Student[];
+
+  constructor(private _student:StudentService ) {}
+
+  getData(){
+  this._student.getStudent()
+          .subscribe(data => this.newObj=data )
+  }
 }
