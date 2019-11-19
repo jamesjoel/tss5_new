@@ -11,7 +11,7 @@ export class StudentComponent implements OnInit {
   
   
 
-  allStudent:Student;
+  allStudent:Student[];
   constructor(private _student : StudentService) { }
 
   ngOnInit() {
@@ -28,7 +28,15 @@ export class StudentComponent implements OnInit {
 
   comeStudent(student:Student)
   {
-    this.allStudent.push(student)
+    
+    this._student.addStudent(student).subscribe(data=>{
+      // console.log(data);
+      if(data){
+        this.allStudent.push(data);
+
+      }
+      
+    });
   }
   
 

@@ -19,8 +19,16 @@ export class StudentService {
 
   getStudent(){
     // return this.allStudent;
-    return this.__http.get<Student>("http://localhost:3000/api/student");
+    return this.__http.get<Student[]>("http://localhost:3000/api/student");
   }
+
+  addStudent(student:Student) {
+    // return this.allStudent;
+    
+    return this.__http.post<any>("http://localhost:3000/api/student", student);
+  }
+  
+
 
 
 
