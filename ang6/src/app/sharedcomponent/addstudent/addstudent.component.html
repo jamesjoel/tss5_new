@@ -2,10 +2,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
 
-            <pre>{{ student | json }}</pre>
+            <!-- <pre>{{ student | json }}</pre> -->
 
             <div class="modal-header">
-                <h2>Add New Student</h2>
+                <h2>{{ student._id ? "Update" : "Add New" }} Student</h2>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-success" (click)="send()" data-dismiss="modal">Save</button>
+                <button class="btn btn-success" (click)="send()" data-dismiss="modal">{{ student._id ? "Update" : "Add" }}</button>
                 <button class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Student } from '../../models/student.interface';
 
 @Component({
@@ -8,8 +8,7 @@ import { Student } from '../../models/student.interface';
 })
 export class AddstudentComponent implements OnInit {
   @Output() goStudent = new EventEmitter();
-
-  student:Student={
+  @Input() student:Student={
     name : "",
     age : null,
     city : ""
