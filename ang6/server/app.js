@@ -40,7 +40,8 @@ app.put("/api/student", function (req, res) {
     });
 });
 
-app.delete("/api/student/:id", function(req, res){
+app.delete("/api/student", function(req, res){
+    // console.log(req.query);
     var id = req.query.id;
     MongoClient.connect("mongodb://localhost:27017", function (err, client) {
         var db = client.db("tss5");

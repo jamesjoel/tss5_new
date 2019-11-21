@@ -12,10 +12,7 @@ app.use(bodyParser());
 app.use(express.static(__dirname+"/dist/ang6/"));
 
 
-app.get("/", function(req, res){
-    console.log(__dirname);
-    res.sendFile(__dirname+"/dist/ang6/index.html");
-});
+
 
 
 
@@ -62,7 +59,10 @@ app.delete("/api/student/:id", function(req, res){
 
 
 
-
+app.get("*", function (req, res) {
+    console.log(__dirname);
+    res.sendFile(__dirname + "/dist/ang6/index.html");
+});
 
 
 

@@ -27,7 +27,22 @@ export class StudentService {
     
     return this.__http.post<any>("http://localhost:3000/api/student", student);
   }
-  
+  delStudent(student : Student){
+    console.log("----------------",student)
+    return this.__http.delete<any>(`http://localhost:3000/api/student?id=${student._id}`);
+  }
+
+
+
+
+
+  emptyStudent(){
+    return {
+      name : "",
+      age : null,
+      city : ""
+    }
+  }
 
 
 

@@ -12,6 +12,8 @@ export class StudentComponent implements OnInit {
   
 
   allStudent:Student[];
+  student:Student=this._student.emptyStudent();
+
   constructor(private _student : StudentService) { }
 
   ngOnInit() {
@@ -36,6 +38,18 @@ export class StudentComponent implements OnInit {
 
       }
       
+    });
+  }
+  askDelete(stu:Student){
+    this.student = stu;
+  }
+  studentDelete(){
+    this._student.delStudent(this.student).subscribe(data=>{
+      // console.log(data);
+      if(data){
+        var n = this.allStudent.indexOf(this.student);
+        this.allStudent.splice(n, 1);
+      }
     });
   }
   

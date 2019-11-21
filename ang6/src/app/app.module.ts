@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { StudentComponent } from './pages/student/student.component';
 import { AddstudentComponent } from './sharedcomponent/addstudent/addstudent.component';
+import { DeleteComponent } from './sharedcomponent/delete/delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     StudentComponent,
-    AddstudentComponent
+    AddstudentComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
