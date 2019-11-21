@@ -10,12 +10,14 @@
                     <th>Name</th>
                     <th>Age</th>
                     <th>City</th>
+                    <th>Delete</th>
                 </tr>
                 <tr *ngFor="let student of allStudent; let i=index">
                     <td>{{ i+1 }}</td>
                     <td>{{ student.name }}</td>
                     <td>{{ student.age }}</td>
                     <td>{{ student.city }}</td>
+                    <td><button class="btn btn-danger btn-sm" data-target="#delModal" data-toggle="modal" (click)="askDelete(student)" >Delete</button></td>
                 </tr>
             </table>
         </div>
@@ -25,3 +27,7 @@
 <app-addstudent 
                 (goStudent)="comeStudent($event)"
 ></app-addstudent>
+<app-delstudent 
+                (confDelete)="studentDelete()"
+                [student]="student"
+></app-delstudent>
