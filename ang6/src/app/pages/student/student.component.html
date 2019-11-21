@@ -11,6 +11,7 @@
                     <th>Age</th>
                     <th>City</th>
                     <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
                 <tr *ngFor="let x of allStudent; let n = index">
                     <td>{{ n+1 }}</td>
@@ -18,11 +19,15 @@
                     <td>{{ x.age }}</td>
                     <td>{{ x.city }}</td>
                     <td><button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delModal" (click)="askDelete(x)">Delete</button></td>
+                    <td><button class="btn btn-sm btn-info" data-toggle="modal" data-target="#addModal" (click)="askEdit(x)">Edit</button></td>
                 </tr>
             </table>
         </div>
     </div>
 </div>
 
-<app-addstudent (goStudent)="comeStudent($event)"></app-addstudent>
+<app-addstudent 
+    [student]="student"
+    (goStudent)="comeStudent($event)">
+</app-addstudent>
 <app-delete (confDelete)="studentDelete()" [student]="student"></app-delete>

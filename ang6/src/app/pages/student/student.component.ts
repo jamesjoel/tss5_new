@@ -17,9 +17,13 @@ export class StudentComponent implements OnInit {
   constructor(private _student : StudentService) { }
 
   ngOnInit() {
-    this._student.getStudent().subscribe(data => {
-       this.allStudent = data;
-    });
+
+    
+
+      this._student.getStudent().subscribe(data => {
+         this.allStudent = data;
+      });
+    
     // console.log(this._student.getStudent());
   }
   /*getAllStudent(){
@@ -30,7 +34,13 @@ export class StudentComponent implements OnInit {
 
   comeStudent(student:Student)
   {
-    
+    if (this.student._id) {
+      this._student.editStudent(this.student).subscribe(data => {
+        console.log("------------", data);
+      });
+    }
+    else {
+
     this._student.addStudent(student).subscribe(data=>{
       // console.log(data);
       if(data){
@@ -39,6 +49,7 @@ export class StudentComponent implements OnInit {
       }
       
     });
+  }
   }
   askDelete(stu:Student){
     this.student = stu;
@@ -51,6 +62,9 @@ export class StudentComponent implements OnInit {
         this.allStudent.splice(n, 1);
       }
     });
+  }
+  askEdit(stu:Student){
+    this.student=stu;
   }
   
 
