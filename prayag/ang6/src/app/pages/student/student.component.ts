@@ -23,12 +23,19 @@ export class StudentComponent implements OnInit {
 
   comeStudent(student:Student){
     // this.allStudent.push(student);
-    this._student.addStudent(student).subscribe(data => {
-      if(data){
-        console.log(data);
-        this.allStudent.push(data);
-      }
-    });
+    if(this.student._id){
+      this._student.editStudent(this.student).subscribe(data => {
+        console.log("...........................",data);
+      });
+    }
+    else{
+      this._student.addStudent(student).subscribe(data => {
+        if(data){
+          console.log(data);
+          this.allStudent.push(data);
+        }
+      });
+    }
   }
 
   askDelete(stu:Student){
@@ -38,12 +45,16 @@ export class StudentComponent implements OnInit {
   studentDelete(){
     this._student.delStudent(this.student).subscribe(data =>{
       console.log(data);
-      // if(data){
-      //   var n =this.allStudent.indexOf(this.student);
-      //   this.allStudent.splice(n,1);
-      // }
+      if(data){
+        var n =this.allStudent.indexOf(this.student);
+        this.allStudent.splice(n,1);
+      }
     });
   }
+
+  askEdit(stu:Student){
+    this.student=stu;
+  };
 
 }
  

@@ -32,10 +32,12 @@ app.post("/api/student",function(req,res){
 });
 
 app.put("/api/student",function(req,res){
-    var id=req.body._id;
+    console.log(req.body)
+    console.log(req.query)
+    var id=req.query.id;
     MongoClient.connect(dbUrl,function(err,client){
         var db =client.db("tss5");
-        db.collection("student").update({_id:mongo.ObjectId(id)},{$set : req.body}, function(err,result){
+        db.collection("student").updateOne({_id:mongo.ObjectId(id)},{$set : req.body}, function(err,result){
             res.json(result);
         });
     });
@@ -46,8 +48,8 @@ app.delete("/api/student",function(req,res){
     var id=req.query.id;
     MongoClient.connect(dbUrl,function(err,client){
         var db=client.db("tss5");
-        db.colletion("student").remove({_id:mongo.ObjectId(id)},function(err,result){
-            console.log(result);
+        db.collection("student").remove({_id:mongo.ObjectId(id)},function(err,result){
+            // console.log(result);
             res.json(result);
         });
     });

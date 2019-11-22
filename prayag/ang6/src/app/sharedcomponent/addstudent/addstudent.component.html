@@ -1,10 +1,10 @@
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
-            <p>{{ student | json }}</p>
+            <!-- <p>{{ student | json }}</p> -->
           <!-- <form action="/api/student" method="POST"> -->
             <div class="modal-header">
-                <h2>New Student Form</h2>
+                <h2>{{ student._id ? "Update" : "New" }} Student Form</h2>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-dismiss="modal" (click)="send()">Add</button>
+                <button class="btn btn-primary" data-dismiss="modal" (click)="send()">{{ student._id ? "Update" : "Add" }}</button>
                 <button class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
           <!-- </form> -->
