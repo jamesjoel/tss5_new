@@ -28,5 +28,31 @@ allStudent:Student[]=[
     return this._http.get<Student[]>("http://localhost:3000/api/student")
   }
 
+  addStudent(student:Student){
+    console.log(student);
+    return this._http.post<any>("http://localhost:3000/api/student",student);
+  }
+
+  delStudent(student:Student){
+    console.log(".......................",student);
+    return this._http.delete<any>(`http://localhost:3000/api/student?id=${student._id}`);
+
+  }
+
+
+
+  editStudent(student:Student){
+    return this._http.put<any>(`http://localhost:3000/api/student?id=${student._id}`,student);
+  }
+
+
+  emptyStudent(){
+    return {
+      name: "",
+      age: null,
+      city: ""
+    }
+  }
+
 }
 
