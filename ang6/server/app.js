@@ -30,18 +30,18 @@ app.post("/api/student", function(req, res){
 });
 
 app.put("/api/student", function (req, res) {
-    console.log(req.body);
-    console.log(req.query);
-    var id = req.query._id;
+    // var id = req.query.id;
+    var id = req.body._id;
     
     
-    // delete req.body._id;
+    delete req.body._id;
     
     // console.log(req.body);
 
     MongoClient.connect("mongodb://localhost:27017", function (err, client) {
         var db = client.db("tss5");
-        db.collection("student").update({ _id : mongo.ObjectId(id)}, { $set : req.body}, function(err, result){
+        db.collection("student").updateOne({ _id : mongo.ObjectId(id)}, { $set : req.body}, function(err, result){
+            console.log("---------",err);
             res.json(result);
         });
     });

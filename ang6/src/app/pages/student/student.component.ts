@@ -31,12 +31,24 @@ export class StudentComponent implements OnInit {
    
   }*/
 
-
+  emptyStu(){
+    this.student=this._student.emptyStudent();
+  }
   comeStudent(student:Student)
   {
     if (this.student._id) {
       this._student.editStudent(this.student).subscribe(data => {
-        console.log("------------", data);
+        // console.log("------------", data);
+        if(data){
+          for(let i=0; i<this.allStudent.length; i++)
+          {
+            if(this.allStudent[i]._id == this.student._id)
+            {
+              this.allStudent[i]=this.student;
+              break;
+            }
+          }
+        }
       });
     }
     else {
@@ -64,7 +76,10 @@ export class StudentComponent implements OnInit {
     });
   }
   askEdit(stu:Student){
-    this.student=stu;
+    // this.student=stu;
+    //Object.assign is used for break 2 way data binding
+    // this.student = Object.assign({}, stu);
+    this.student = {... stu};
   }
   
 
