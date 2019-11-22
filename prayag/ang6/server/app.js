@@ -36,8 +36,10 @@ app.put("/api/student",function(req,res){
     console.log(req.query)
     var id=req.query.id;
     MongoClient.connect(dbUrl,function(err,client){
+       
         var db =client.db("tss5");
-        db.collection("student").updateOne({_id:mongo.ObjectId(id)},{$set : req.body}, function(err,result){
+        db.collection("student").updateMany({_id:mongo.ObjectId(id)},{$set : req.body}, function(err,result){
+            console.log(result)
             res.json(result);
         });
     });
