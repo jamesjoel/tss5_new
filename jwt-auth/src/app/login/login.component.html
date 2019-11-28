@@ -1,0 +1,13 @@
+<!-- <pre>{{ user | json }}</pre> -->
+<fieldset>
+    <legend>Login</legend>
+    Username/Email <input type="text" [(ngModel)]="user.email"/>
+    <Br />
+    <Br />
+    Password <input type="password" [(ngModel)]="user.password"/>
+    <Br />
+    <Br />
+    <button (click)="login()">Login</button>
+    <Br />
+    <p>{{ errorMsg }}</p>
+</fieldset>
