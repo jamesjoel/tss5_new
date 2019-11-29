@@ -25,13 +25,22 @@ export class StudentComponent implements OnInit {
     // this.allStudent.push(student);
     if(this.student._id){
       this._student.editStudent(this.student).subscribe(data => {
-        console.log("...........................",data);
+        // console.log("...........................",data);
+        if(data){
+          for(let i=0; i<this.allStudent.length; i++)
+          {
+            if(this.allStudent[i]._id==this.student._id){
+              this.allStudent[i]=this.student;
+              break;
+            }
+          }
+        }
       });
     }
     else{
       this._student.addStudent(student).subscribe(data => {
         if(data){
-          console.log(data);
+          // console.log(data);
           this.allStudent.push(data);
         }
       });
@@ -54,6 +63,8 @@ export class StudentComponent implements OnInit {
 
   askEdit(stu:Student){
     this.student=stu;
+    // this.student=Object.assign({},stu);
+    this.student={... stu};
   };
 
 }

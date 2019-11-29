@@ -1,0 +1,34 @@
+<div class="modal fade" id="addModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+                <!-- <p>{{ student | json }}</p> -->
+            <div class="modal-header">
+                <h2>{{ student._id ? "Update" : "Add New"  }} Student</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="student.name" name="name">
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" class="form-control" [(ngModel)]="student.age" name="age">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <select class="form-control" [(ngModel)]="student.city" name="city">
+                        <option value="">Select</option>
+                        <option value="Indore">Indore</option>
+                        <option value="Bhopal">Bhopal</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Ujjain">Ujjain</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" (click)="send()" data-dismiss="modal">{{ student._id ? "Update": "Add" }}</button>
+                <button class="btn btn-dark" data-dismiss="modal" (click)="demo()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

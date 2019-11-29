@@ -1,0 +1,38 @@
+<br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <button class="btn btn-success" data-toggle="modal" data-target="#addModal">Add Student</button>
+            <table class="table table-bordered table-dark">
+                <tr>
+                    <th>S.no</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+                <tr *ngFor="let student of allStudent; let n=index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.age }}</td>
+                    <td>{{ student.city }}</td>
+                    <td><button class="btn btn-danger btn-sm" (click)="askDelete(student)" data-target="#delModal" data-toggle="modal">Delete</button></td>
+                    <td><button class="btn btn-warning btn-sm" (click)="askEdit(student)" data-target="#addModal" data-toggle="modal">Edit</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<app-addstudent
+                (gostudent)="addStudent($event)"
+                [student]="student"
+></app-addstudent>
+
+<app-delstudent
+                [student]="student"
+                (deletestu)="deleteStudent()"
+></app-delstudent>
