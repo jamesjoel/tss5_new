@@ -1,0 +1,8 @@
+<h3>Department List</h3>
+
+
+<ul class="list-group">
+    <li *ngFor="let x of departments"  class="list-group-item">
+        <a routerLink="/departments/{{ x.id }}" class="list-group-link"><span class="badge badge-dark badge-pill">{{ x.id }}</span> {{ x.name }}</a>
+    </li>
+</ul>

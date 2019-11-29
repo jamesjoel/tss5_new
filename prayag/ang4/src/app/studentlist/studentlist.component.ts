@@ -118,7 +118,8 @@ newStudent:student={
   }
   askEdit(a:student){
     // this.newStudent=a;
-    this.newStudent=Object.assign({},a);
+    // this.newStudent=Object.assign({},a);
+    this.newStudent={... a};
     
   }
 

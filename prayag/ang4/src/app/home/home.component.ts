@@ -26,16 +26,6 @@ export class HomeComponent implements OnInit {
       name: "hardik",
       age: 20,
       city: "gujrat"
-    },
-    {
-      name: "ravindra",
-      age: 34,
-      city: "varansi"
-    },
-    {
-      name: "rahul",
-      age: 30,
-      city: "delhi"
     }
   ]
 
