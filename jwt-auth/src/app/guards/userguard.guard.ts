@@ -9,19 +9,19 @@ import { Router } from '@angular/router';
 })
 export class UserguardGuard implements CanActivate {
 
-  constructor(private _auth : AuthService, private _router : Router){
-
-  }  
+  constructor(
+    private _auth : AuthService, 
+    private _router : Router
+    ){ }  
   canActivate() : boolean{
-    console.log("sdfg sdfg sdfg sdfg");
-    // if(this._auth.isLoggedIn())
-    // {
-    //   return true;
-    // }
-    // else{
-    //   this._router.navigate(["/"]);
-    //   return false;
-    // }
-    return true;
+    if(this._auth.isLoggedIn())
+    {
+      return true;
+    }
+    else{
+      this._router.navigate(["/"]);
+      return false;
+    }
+  
   }
 }
