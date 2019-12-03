@@ -1,0 +1,27 @@
+<!-- <pre>{{ user | json }}</pre> -->
+<div class="row">
+    <div class="col-md-4 offset-md-4 mt-4 pt-4">
+        <div class="card">
+            <div class="card-header">
+                Login
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Username/Email</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.email" />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" [(ngModel)]="user.password" />
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success" (click)="login()">Login</button>
+                <p class="text-danger text-center">
+                    {{ errorMsg }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+

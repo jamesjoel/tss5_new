@@ -14,12 +14,17 @@ export class AuthService {
   doLogin(user:User){
     return this._http.post<any>("http://localhost:3000/user/auth", user);
   }
+
   logout(){
     localStorage.removeItem("mytoken");
     this._router.navigate(["/"]);
   }
+  getToken(){
+    return localStorage.getItem("mytoken");
+  }
+
   isLoggedIn(){
-    console.log("sdfgsdgsdsdf");
+    
     if(localStorage.getItem("mytoken"))
     {
       return true;
@@ -28,9 +33,6 @@ export class AuthService {
       return false;
     }
   }
-  getUserInfo(user:User){
-    return this._http.get<User>("http://localhost:3000/api/user/"+user._id);
-  }
-
+  
 
 }
