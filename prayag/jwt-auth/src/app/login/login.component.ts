@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { User } from '../models/user.interface';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  user={
+  user:User={
     email: "",
     password: ""
   }
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   login(){
     this._auth.doLogin(this.user).subscribe(data =>{
-      console.log(data);
+      // console.log(data);
       localStorage.setItem("myToken",data.token);
       this._router.navigate(["/user"]);
     },
