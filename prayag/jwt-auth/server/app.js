@@ -3,6 +3,9 @@ var app =express();
 var cors=require("cors");
 var bodyParser=require("body-parser");
 var jwt=require("jsonwebtoken");
+var MongoClient=require("mongodb").MongoClient;
+var dbUrl="mongodb://localhost:27017";
+
 
 
 app.use(cors());
@@ -40,30 +43,40 @@ app.get("/api/user",function(req,res){
 
 
 app.post("/user/auth",function(req,res){
-    // console.log(req.body);
-    if(req.body.email=="mayank@gmail.com")
-    {
-        if(req.body.password=="11")
-        {
-            var token=jwt.sign({id:2, name:"Mayank"},"this is my private key",{ expiresIn: 3600 });
-            res.status(200).send({
-                status:true,
-                token
-            });
-        }
-        else{
-            res.status(401).send({
-                status:false,
-                msg: "Password is incoorect."
-            });
-        }
-        
-    }else{
-        res.status(401).send({
-            success: false,
-            msg: "Username/Email is incorrect."
-        });
-    }
+    console.log(req.body);
+    MongoClient.connect(dbUrl,function(err,client){
+        var db=client.db("tss5");
+        db.collection("angularuser").find({email: req.body.email}).toArray(function(err,result){
+            if(result.length==1)
+            {
+
+                if(result[0].password==req.body.password)
+                {
+                    var token=jwt.sign({id: result[0]._id, name:result[0].full_name},"this is my secret key",{expiresIn:3600});
+                    res.status(200).send({
+                        success:true,
+                        token
+                    });
+                }
+                else
+                {
+                    res.status(401).send({
+                        success: false,
+                        msg: "This password is incorrect."
+                    });
+                }
+
+            }
+            else
+            {
+                res.status(401).send({
+                    success: false,
+                    msg: "This Username and Password is incorrect."
+                });
+            }
+        })
+    });
+
 });
 
 

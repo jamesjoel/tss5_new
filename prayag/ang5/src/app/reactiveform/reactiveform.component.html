@@ -1,0 +1,43 @@
+<div class="container">
+    <h2>Registration Form</h2>
+    <form [formGroup]="registrationForm">
+            {{ registrationForm.value | json }}
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" [class.is-invalid]="registrationForm.get('userName').invalid &&
+                                                    registrationForm.get('userName').touched" 
+                                 formControlName="userName" class="form-control">
+            <!-- <small class="text-danger" [class.d-none]="registrationForm.get('userName').valid || 
+                                                        registrationForm.get('userName').untouched">Username is incorrect.</small> -->
+             <div *ngIf="registrationForm.get('userName').invalid && registrationForm.get('userName').touched">
+                 <small *ngIf="registrationForm.get('userName').errors?.required" class="text-danger">Username is Required</small>
+                 <small *ngIf="registrationForm.get('userName').errors?.minlength" class="text-danger">Username must be atleast 3 characters.</small>
+             </div>                                           
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" formControlName="password" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" formControlName="confirmPassword" class="form-control">
+        </div>
+        <div formGroupName="address">
+            <div class="form-group">
+                <label>City</label>
+                <input formControlName="city" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>State</label>
+                <input formControlName="state" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Postal Code</label>
+                <input formControlName="postalCode" type="text" class="form-control">
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+        <button class="btn btn-muted" (click)="loadApi()" >Load API</button>
+   </form>
+
+</div>

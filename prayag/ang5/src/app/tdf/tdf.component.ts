@@ -10,9 +10,9 @@ export class TdfComponent implements OnInit {
 
 
 
-  topic=["Angular","nodejs", "Vue"]
+  topics=["Angular","nodejs", "Vue"]
 
-  user=new User("", "abc@gmail.com",32382393920,"")
+  user=new User("", "abc@gmail.com",3238239390,"")
   constructor() { }
 
   ngOnInit() {
