@@ -1,1 +1,26 @@
-<p>home works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <table class="table table-hover table-dark">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>Bonus</th>
+                </tr>
+                <tr *ngFor="let x of data; let n = index">
+                    <td>{{ n + 1}}</td>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.age }}</td>
+                    <td>{{ x.city }}</td>
+                    <td>{{ x.gender }}</td>
+                    <td [innerHTML]="x.salary | mycurrency : x.country"></td>
+                    <td>{{ x.salary | mypipe : x.age : x.gender }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -46,7 +46,7 @@ app.post("/user/auth",function(req,res){
     console.log(req.body);
     MongoClient.connect(dbUrl,function(err,client){
         var db=client.db("tss5");
-        db.collection("angularuser").find({email: req.body.email}).toArray(function(err,result){
+        db.collection("angularuser").find({username: req.body.email}).toArray(function(err,result){
             if(result.length==1)
             {
 
