@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form #userform="ngForm">
+                    <div class="card">
+                            <div class="card-header">
+                                <h3 class="mb-0 ">Create your Google Account</h3><br>
+                                <p class="mt-0  text-primary">Continue to Gmail</p>
+                            </div>
+                            <div class="card-body">
+                                <!-- {{ user | json }} -->
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="Full Name" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="user.name" required  class="form-control" name="name">
+                                    <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is Required</small>
+                                </div>
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    <input type="email"  placeholder="Username" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" [(ngModel)]="user.email" required class="form-control" name="email">
+                                    <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email/username is Required.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact</label>
+                                    <input type="tel" placeholder="contact" pattern="\d{10}$" #contact="ngModel" [class.is-invalid]="contact.invalid && contact.touched" [(ngModel)]="user.contact" required class="form-control" name="contact">
+                                    <!-- <small class="text-danger" [class.d-none]="contact.valid || contact.untouched">Phone No. is Required.</small>
+                                     -->
+                                    <div *ngIf="contact.errors && (contact.invalid && contact.touched)">
+                                        <small *ngIf="contact.errors.required" class="text-danger" >Phone number is required.</small>
+                                        <small *ngIf="contact.errors.pattern" class="text-danger">Phone number must be 10 digits.</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" placeholder="Password" [(ngModel)]="user.password" required class="form-control" name="password">
+                                    <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is Required</small>
+                                </div>
+                                <div class="form-group">
+                                    <label>Re-Enter Password</label>
+                                    <input type="password" placeholder="Re-Enter Password" required class="form-control">
+                                </div>
+            
+                            </div>
+                            <div class="card-footer">
+                                <a routerLink="/login" class="d-block float-left text-dark" style="text-decoration: underline">Instead Login?</a>
+                                <button [disabled]="userform.form.invalid" (click)="signup()" class="btn btn-primary d-block float-right">Sign Up</button>
+                            </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>

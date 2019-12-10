@@ -1,0 +1,32 @@
+<div id="addStudent" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Add New Student</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" name="name" [(ngModel)]="student.name">
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" class="form-control" name="age" [(ngModel)]="student.age">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <select [(ngModel)]="student.city" name="city" class="form-control">
+                        <option value="">Select</option>
+                        <option value="Indore">Indore</option>
+                        <option value="Ujjain">Ujjain</option>
+                        <option value="Bhopal" >Bhopal</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success d-block mx-auto" (click)="send()">ADD</button>
+            </div>
+
+        </div>
+    </div>
+</div>

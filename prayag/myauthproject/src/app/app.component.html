@@ -1,0 +1,54 @@
+<nav class="navbar bg-dark navbar-dark navbar-expand-sm sticky-top">
+  <a routerLink="/" class="navbar-brand">Navbar</a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<ng-template [ngIf]="_auth.isLoggedIn()" [ngIfElse]="afterLogin">
+  <div class="collapse navbar-collapse float-left" id="myMenu">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/user" class="nav-link">User</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/profile" class="nav-link">Profile</a>
+      </li>
+    </ul>
+  </div>
+  <div class="collapse navbar-collapse justify-content-end" id="myMenu">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a (click)="_auth.logout()" style="cursor: pointer" class="nav-link">LogOut</a>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+<ng-template #afterLogin>
+    <div class="collapse navbar-collapse float-left" id="myMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a routerLink="/" class="nav-link">Home</a>
+          </li>
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="myMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a routerLink="/login" class="nav-link">Login</a>
+          </li>
+        </ul>
+    </div>
+</ng-template>
+</nav>
+
+
+  
+
+  
+
+
+
+
+<router-outlet></router-outlet>
