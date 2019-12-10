@@ -1,0 +1,21 @@
+<div class="container mt-4 pt-4">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 offset-md-4">
+            <h1 class="text-center login-title">Sign in to continue to Gmail</h1>
+            <div class="account-wall">
+                <ng-template [ngIf]="usernamecheck" [ngIfElse]="pass">
+
+                    <app-password (goUser)="checkPassword($event)" [userdata]="userdata"></app-password>
+                </ng-template>
+                <ng-template #pass>
+
+                    <app-username (goUser)="login($event)"></app-username>
+                </ng-template>
+                <p class="text-danger text-center">
+                    {{ errorMsg }}
+                </p>
+            </div>
+            <a routerLink="signup" class="text-center new-account">Sign in with a different account</a>
+        </div>
+    </div>
+</div>
