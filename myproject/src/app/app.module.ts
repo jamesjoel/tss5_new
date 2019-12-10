@@ -10,6 +10,8 @@ import { UserComponent } from './pages/user/user.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { MypipePipe } from './pipes/mypipe.pipe';
+import { MycurrencyPipe } from './pipes/mycurrency.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     UserComponent,
     LoginComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    MypipePipe,
+    MycurrencyPipe
   ],
   imports: [
     BrowserModule,
