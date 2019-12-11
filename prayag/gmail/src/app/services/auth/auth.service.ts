@@ -18,4 +18,24 @@ doLogin(user:User){
   return this._http.post<any>("http://localhost:3000/api/user/auth",user)
 }
 
+isLoggedIn(){
+  if(localStorage.getItem("token"))
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
+logout(){
+  localStorage.removeItem("token");
+  this._router.navigate(["/"])
+}
+
+getToken(){
+  return localStorage.getItem("token");
+}
+
 }

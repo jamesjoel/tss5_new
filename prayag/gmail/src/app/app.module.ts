@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { UserComponent } from './pages/user/user.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
