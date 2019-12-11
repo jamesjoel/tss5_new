@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-
+  userData:any;
   user:User={
     email:"",
     password:""
@@ -26,11 +26,30 @@ export class LoginComponent implements OnInit {
 
   next(){
     this._auth.doLogin(this.user).subscribe(result => {
-      console.log(result) 
-      
+      // console.log(result) 
+      if(result)
+      {
+        this.userData=result;   
+        this.errorMsg="";
+      }
     },
     err =>{
       this.errorMsg=err.error.msg;
     });
   }
+
+  login(){
+    this.user.email=this.userData.email;
+    this._auth.doLogin(this.user).subscribe(result =>{
+      // console.log(result);
+      localStorage.setItem("token",result.token);
+      this._router.navigate(["/user"])
+
+    },
+    err =>{
+      this.errorMsg=err.error.msg;
+    });
+  }
+
+
 }

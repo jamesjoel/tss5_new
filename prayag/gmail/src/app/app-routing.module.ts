@@ -4,6 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { UserComponent } from './pages/user/user.component';
+import { BackdoorGuard } from './guards/backdoor.guard';
 
 
 const routes: Routes = [
@@ -18,6 +20,11 @@ const routes: Routes = [
   {
     path:"signup",
     component:SignupComponent
+  },
+  {
+    path:"user",
+    component:UserComponent,
+    canActivate:[BackdoorGuard]
   },
   {
     path: "**",
