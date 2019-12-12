@@ -8,34 +8,34 @@ routes.post("/",function(req,res){
     var email=req.body.email;
 
 
-    user.find({email:email}).toArray(function(err,result){
+    user.find({email:email},function(err,result){
         console.log(result);
-        // if(result.length==0)
-        // {
-            // req.body.password=sha1(req.body.password);
-            // // console.log(req.body);
-            // user.insert(req.body,function(err,result){
-            //     // res.json(result.ops[0]);
-            //     res.status(200).send({
-            //         success: true
-            //     });
-            // });
-        // }
-        // else
-        // {
-        //     res.status(401).send({
-        //         success:false,
-        //         msg:"This Username is Already taken.."
-        //     });
-        // }
-        req.body.password=sha1(req.body.password);
+        if(result.length==0)
+        {
             // console.log(req.body);
+            req.body.password=sha1(req.body.password);
             user.insert(req.body,function(err,result){
                 // res.json(result.ops[0]);
                 res.status(200).send({
                     success: true
                 });
             });
+        }
+        else
+        {
+            res.status(401).send({
+                success:false,
+                msg:"This Username is Already taken.."
+            });
+        }
+        // req.body.password=sha1(req.body.password);
+        //     // console.log(req.body);
+        //     user.insert(req.body,function(err,result){
+        //         // res.json(result.ops[0]);
+        //         res.status(200).send({
+        //             success: true
+        //         });
+        //     });
     });
 });
 

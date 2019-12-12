@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-
+  errorMsg:string="";
   user:User={
     name:"",
     email:"",
@@ -24,14 +24,57 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
-  signup(){
+  signup(x,y:HTMLInputElement){
     this._user.addUser(this.user).subscribe(result => {
       console.log(result)
-      
+      if(x=='btn')
+      {
         this._router.navigate(["/login"]);
+      }
+      if(x=='txt')
+      {
+        this.errorMsg="";
+      }
 
+    },
+    err=>{
+      this.errorMsg=err.error.msg;
+      if(x=='btn')
+      {
+        // console.log(y)
+        y.focus();
+      }
     });
 
   }
+
+  // signup(x,y:HTMLInputElement){
+  //   if(x=='btn')
+  //   {
+  //     this._user.addUser(this.user).subscribe(result =>{
+  //       this._router.navigate(["/login"]);
+  //     },
+  //     err =>{
+  //       this.errorMsg=err.error.msg;
+  //       if(x=='btn')
+  //       {
+  //         y.focus();
+  //       }
+  //     });
+  //   }
+  //   if(x=='txt')
+  //   {
+  //     this._user.addUser(this.user).subscribe(result =>{
+
+  //     },
+  //     err =>{
+  //       this.errorMsg=err.error.msg;
+  //       if(x=='btn')
+  //       {
+  //         y.focus();
+  //       }
+  //     });
+  //   }
+  // }
 
 }

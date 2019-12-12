@@ -6,8 +6,6 @@ var jwt=require("jsonwebtoken");
 
 
 routes.post("/",function(req,res){
-
-
     // console.log(req.body);
     var email=req.body.email;
     user.find({email:email},function(err,result){

@@ -16,8 +16,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Username</label>
-                                    <input type="email"  placeholder="Username" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" [(ngModel)]="user.email" required class="form-control" name="email">
+                                    <input type="email" #userTxt  placeholder="Username" (blur)="signup('txt','')" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" [(ngModel)]="user.email" required class="form-control" name="email">
                                     <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email/username is Required.</small>
+                                    <small class="text-danger">{{ errorMsg }}</small>
                                 </div>
                                 <div class="form-group">
                                     <label>Contact</label>
@@ -42,7 +43,7 @@
                             </div>
                             <div class="card-footer">
                                 <a routerLink="/login" class="d-block float-left text-dark" style="text-decoration: underline">Instead Login?</a>
-                                <button [disabled]="userform.form.invalid" (click)="signup()" class="btn btn-primary d-block float-right">Sign Up</button>
+                                <button [disabled]="userform.form.invalid" (click)="signup('btn',userTxt)" class="btn btn-primary d-block float-right">Sign Up</button>
                             </div>
                     </div>
             </form>

@@ -5,6 +5,7 @@ import { DepartmentListComponent } from './department-list/department-list.compo
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 import { TdfComponent } from './tdf/tdf.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { Rforms2Component } from './rforms2/rforms2.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path:"departments",
     component: DepartmentListComponent
+  },
+  {
+    path:"forms2",
+    component:Rforms2Component
   },
   {
     path: "departments/:id",
