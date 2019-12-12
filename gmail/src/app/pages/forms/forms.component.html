@@ -10,6 +10,9 @@
                     <div *ngIf="submitted && myForm.controls.fullname.errors.required" class="text-danger">
                         Pls Insert Your Full Name
                     </div>
+                    <div *ngIf="submitted && myForm.controls.fullname.errors.abc" class="text-danger">
+                        Name should be start with "J"
+                    </div>
                 </div> 
             </div>
             <div class="form-group">
