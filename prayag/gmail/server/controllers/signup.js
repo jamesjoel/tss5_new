@@ -9,13 +9,21 @@ routes.post("/",function(req,res){
     var email=req.body.email;
 
 
+<<<<<<< HEAD
     user.find({email:"rohit@gmail.com"},function(err,result){
         
         console.log(result);
         if(result.length==0)
         {
             req.body.password=sha1(req.body.password);
+=======
+    user.find({email:email},function(err,result){
+        console.log(result);
+        if(result.length==0)
+        {
+>>>>>>> aedd78fc6151436fe3063b057aa3c42bf34ad597
             // console.log(req.body);
+            req.body.password=sha1(req.body.password);
             user.insert(req.body,function(err,result){
                 // res.json(result.ops[0]);
                 res.status(200).send({

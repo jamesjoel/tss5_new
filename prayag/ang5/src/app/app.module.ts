@@ -10,7 +10,8 @@ import { StudentComponent } from './student/student.component';
 import { DepartmentListComponent } from './department-list/department-list.component';
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 import { TdfComponent } from './tdf/tdf.component';
-import { ReactiveformComponent } from './reactiveform/reactiveform.component'
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { Rforms2Component } from './rforms2/rforms2.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component'
     DepartmentListComponent,
     DepartmentDetailComponent,
     TdfComponent,
-    ReactiveformComponent
+    ReactiveformComponent,
+    Rforms2Component
   ],
   imports: [
     BrowserModule,
