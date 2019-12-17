@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<!-- Brand -->
+<a class="navbar-brand" href="#">TSS</a>
+
+<!-- Toggler/collapsibe Button -->
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- Navbar links -->
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" *ngIf="! _authService.isLoggedIn()" href="#">Login</a>
+      <a style="cursor:pointer" class="nav-link" (click)="_authService.logout()" *ngIf="_authService.isLoggedIn()">Logout</a>
+    </li>
+    
+  </ul>
+</div>
+</nav>
+
+<router-outlet></router-outlet>

@@ -11,7 +11,7 @@ import { MyformService }  from '../myform.service';
 })
 export class UploadComponent implements OnInit {
 
-  name: any ="./assets/images/";
+  // name: any ="./assets/images/1.jpg";
   constructor(
     private _upload : UploadService,
     private _form : MyformService
@@ -23,7 +23,8 @@ export class UploadComponent implements OnInit {
     
     let form = this._form.uploadFormCreate(fileArr[0], "image");
     this._upload.fileUpload(form).subscribe(data=>{
-      this.name += data.name;
+      console.log(data);
+      // this.name += data.name;
       //console.log(this.name);
     });
   }

@@ -1,0 +1,30 @@
+body{
+	background-color: #14ACE1;
+}
+#box{
+	height: auto;
+	min-height: 300px;
+	width: 600px;
+	background-color: #BAD145;
+
+	text-align: justify; 	/* left, right, center, justify */
+	text-decoration:  underline;	/* underline, overline, line-through, none */
+	text-transform: capitalize; /*uppercase, lowercase, capitalize*/
+
+
+	color : #FFF;
+	font-size: 20px;
+	/*font-style: italic;*/
+	/*font-weight: bold;*/
+	font-family: Helvetica;
+
+	/*letter-spacing: -1px;*/
+	/*word-spacing: 10px;*/
+	/*line-height: 40px;*/
+
+	text-indent: 100px;
+
+}
+h1{
+	text-shadow: 5px 5px 3px red;
+}
