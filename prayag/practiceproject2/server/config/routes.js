@@ -34,7 +34,7 @@ function backdoor(req,res,next){
                 });  
             }
             else{
-                var userData=payload;
+                req.userData=payload;
                 next();
             }
         }

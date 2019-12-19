@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DemoService  } from './services/demo.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,9 @@ import { Component } from '@angular/core';
 })
 
 
-export class AppComponent {
+export class AppComponent{
+  
   name="james";
   age=25;
+
 }
