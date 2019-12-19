@@ -6,10 +6,55 @@ var sha1=require("sha1");
 var MongoClient=require("mongodb").MongoClient;
 var dbUrl="mongodb://localhost:27017";
 var jwt=require("jsonwebtoken");
-
+var mongo=require("mongodb");
 
 app.use(bodyParser());
 app.use(cors());
+
+
+app.get("/api/student",function(req,res){
+    MongoClient.connect(dbUrl,function(err,client){
+        var db=client.db("angularuser");
+        db.collection("student").find().toArray(function(err,result){
+            res.json(result);
+        });
+    });
+});
+
+app.post("/api/student",function(req,res){
+    // console.log(req.body);
+    req.body.age=parseInt(req.body.age)
+    MongoClient.connect(dbUrl,function(err,client){
+        var db=client.db("angularuser");
+        db.collection("student").insert(req.body,function(err,result){
+            // console.log(result)
+            res.json(result.ops[0]);
+        });
+    });
+});
+
+app.delete("/api/student",function(req,res){
+    // console.log(req.query)  
+    MongoClient.connect(dbUrl,function(err,client){
+        var db=client.db("angularuser");
+        db.collection("student").remove({_id:mongo.ObjectId(req.query.id)},function(err,result){
+            res.json(result);
+        });
+    });
+});
+
+app.put("/api/student",function(req,res){
+    console.log(req.query)
+    delete req.body._id;
+    MongoClient.connect(dbUrl,function(err,client){
+        var db=client.db("angularuser");
+        db.collection("student").update({_id:mongo.ObjectId(req.query.id)},{$set:req.body},function(err,result){
+            res.json(result)
+            // console.log(result)
+        });
+    });
+});
+
 
 
 app.post("/api/user",function(req,res){

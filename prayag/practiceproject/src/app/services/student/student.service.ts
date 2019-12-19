@@ -9,18 +9,7 @@ import { Router } from '@angular/router';
 export class StudentService {
 
   student:Student;
-allStudent:Student[]=[
-  {
-    name:"rohit",
-    age: 22,
-    city:"indore"
-  },
-  {
-    name:"neha",
-    age:24,
-    city:"bhopal"
-  }
-]
+allStudent:Student[];
 
   constructor(
     private _http:HttpClient,
@@ -31,9 +20,23 @@ allStudent:Student[]=[
     return this.allStudent;
   }
 
+  getStudent(){
+    return this._http.get<Student[]>("http://localhost:3000/api/student");
+  }
+
   addStudent(student:Student){
     return this._http.post<any>("http://localhost:3000/api/student",student);
   }
+
+  delStudent(student:Student){
+    // console.log(student)
+    return this._http.delete<any>(`http://localhost:3000/api/student?id=${student._id}`);
+  }
+
+  editStudent(student:Student){
+    return this._http.put<any>(`http://localhost:3000/api/student?id=${student._id}`,student);
+  }
+
 
   emptyStudent(){
     return this.student={

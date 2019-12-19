@@ -14,13 +14,59 @@ export class StudentComponent implements OnInit {
   ) { }
 
   allStudent:Student[];
+  student:Student=this._student.emptyStudent();
 
   ngOnInit() {
-    this.allStudent=this._student.studentList()
+    this._student.getStudent().subscribe(data=> {
+      this.allStudent=data;
+    });
   }
 
   addStudent(student:Student){
-    this.allStudent.push(student);
+    if(student._id)
+    {
+      this._student.editStudent(student).subscribe(data => {
+        console.log("............................",data);
+        if(data)
+        {
+          for(var i=0; i<this.allStudent.length; i++)
+          {
+            if(this.allStudent[i]._id==student._id)
+            {
+              this.allStudent[i]=student;
+              break;
+            }
+          }
+        }
+      });
+    }
+    else
+    {
+      this._student.addStudent(student).subscribe( data=> {
+        console.log(data)
+        if(data){
+          this.allStudent.push(data);
+        }
+      });
+    }
+  }
+
+  askEdit(student:Student){
+    this.student=student;
+    this.student={... student};
+  }
+
+  askDel(student:Student){
+    this.student=student;
+  }
+  delete(){
+    this._student.delStudent(this.student).subscribe(data => {
+      if(data){
+        var n= this.allStudent.indexOf(this.student);
+        this.allStudent.splice(n,1);
+        this.student=this._student.emptyStudent();
+      }
+    })
   }
 
 

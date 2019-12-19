@@ -12,12 +12,16 @@
                     <th>Name</th>
                     <th>Age</th>
                     <th>City</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
                 <tr *ngFor="let student of allStudent; let n=index">
                     <td>{{ n+1 }}</td>
                     <td>{{ student.name }}</td>
                     <td>{{ student.age }}</td>
                     <td>{{ student.city }}</td>
+                    <td><button class="btn btn-danger btn-sm" data-target="#delStudent" data-toggle="modal" (click)="askDel(student)">Delete</button></td>
+                    <td><button class="btn btn-warning btn-sm" data-target="#addStudent" data-toggle="modal" (click)="askEdit(student)">Edit</button></td>
                 </tr>
             </table>
         </div>
@@ -26,4 +30,10 @@
 
 <app-addstudent 
             (goStudent)="addStudent($event)"
+            [student]="student"
 ></app-addstudent>
+
+<app-delstudent
+            [student]="student"
+            (delete)="delete()"
+></app-delstudent>

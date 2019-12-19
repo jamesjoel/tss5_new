@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4>Add New Student</h4>
+                <h4>{{ student._id ? "Update" : "Add New"  }} Student</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -24,7 +24,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-success d-block mx-auto" (click)="send()">ADD</button>
+                <button class="btn btn-success " data-dismiss="modal" (click)="send()">{{ student._id ? "Update" : "Add" }}</button>
+                <button class="btn btn-dark " data-dismiss="modal" (click)="close()">Close</button>
             </div>
 
         </div>

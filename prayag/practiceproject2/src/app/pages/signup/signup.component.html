@@ -1,0 +1,36 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <p class="text-center"><b>User Signup Page</b></p>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" name="name" [(ngModel)]="user.name">
+                    </div>
+                    <div class="form-group">
+                        <label>Username/Email</label>
+                        <input type="email" class="form-control" name="email" [(ngModel)]="user.email">
+                    </div>
+                    <div class="form-group">
+                        <label>Contact</label>
+                        <input type="tel" class="form-control" name="contact" [(ngModel)]="user.contact">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" [(ngModel)]="user.password">
+                    </div>
+                    <div class="form-group">
+                        <label>Re-Enter Password</label>
+                        <input type="passsword" class="form-control" name="passsword">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary d-block mx-auto" (click)="signup()">Signup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

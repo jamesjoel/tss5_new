@@ -12,6 +12,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { StudentComponent } from './pages/student/student.component';
 import { AddstudentComponent } from './sharedcomponent/addstudent/addstudent.component';
+import { DelstudentComponent } from './sharedcomponent/delstudent/delstudent.component';
+import { FileuploadComponent } from './pages/fileupload/fileupload.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AddstudentComponent } from './sharedcomponent/addstudent/addstudent.com
     LoginComponent,
     SignupComponent,
     StudentComponent,
-    AddstudentComponent
+    AddstudentComponent,
+    DelstudentComponent,
+    FileuploadComponent
   ],
   imports: [
     BrowserModule,
