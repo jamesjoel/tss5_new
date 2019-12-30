@@ -25,6 +25,10 @@ const routes: Routes = [
     path : "profile",
     canActivate : [BackdoorGuard],
     component : ProfileComponent
+  },
+  {
+    path : "admin",
+    loadChildren: './admin/admin.module#AdminModule'
   }
 ];
 

@@ -42,13 +42,14 @@ app.post("/api/user/auth", function (req, res) {
 app.get("/api/user/getuser", backdoor, function(req, res){
     // console.log(req.userData);
     var id = req.userData.id;
+    console.log("++++++++++++", id);
 
 });
 
 
 
 function backdoor(req, res, next){
-    console.log(req.headers);
+    console.log("----------------",req.headers);
     if(! req.headers.authorization)
     {
         res.status(401).send({ msg : "Unathorized User"});
