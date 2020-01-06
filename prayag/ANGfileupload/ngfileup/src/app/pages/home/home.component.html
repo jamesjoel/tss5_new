@@ -1,0 +1,16 @@
+<br>
+
+<div class="container">
+    <div class="row">
+        <!-- <h5>{{ path }}</h5> -->
+        <p class="text-success">{{ msg }}</p>
+        <input type="file" (change)="upload($event.target.files)" class="m-0 p-0">
+        
+    </div>
+    <div class="row">
+        <button *ngIf="path" class="btn btn-success" (click)="pushFile()">Upload</button>
+    </div>
+    <div *ngIf="path" class="row">
+        <img src="{{ path }}" />
+    </div>
+</div>

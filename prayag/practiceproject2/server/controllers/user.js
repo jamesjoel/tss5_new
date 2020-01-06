@@ -18,7 +18,7 @@ routes.post("/upload",function(req,res){
     // console.log(myPath);
     fileName.mv(myPath,function(err){
         console.log("file upload successfull.");
-        res.send({fileUrl : "http:localhost:3000:/images/" + fileName.name});
+        res.send({fileUrl : "http:localhost:3000/images/" + fileName.name});
         // res.send({fileUrl : "./assets/images/" + fileName.name});
     });
 });

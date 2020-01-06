@@ -22,7 +22,7 @@ export class UserService {
   getUser(){
     console.log("calling");
     return this._http.get<any>("http://localhost:3000/api/user/getUser",{
-      headers:{Authorization:this._auth.getToken()}
+      headers:{Authorization:this._auth.getToken()}    
     });
   }
 

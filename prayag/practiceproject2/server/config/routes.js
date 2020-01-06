@@ -1,13 +1,15 @@
 var express=require("express");
 var routes=express.Router();
 var jwt=require("jsonwebtoken");
-
+// var login=require("../controllers/login");
+// var backdoor=login[1];
 
 
 routes.use("/api/user/signup",require("../controllers/signup"));
 routes.use("/api/user/auth",require("../controllers/login"));
-routes.use("/api/user",require("../controllers/user"));
-routes.use("/api/student",require("../controllers/student"));
+routes.use("/api/user",backdoor,require("../controllers/user"));
+routes.use("/api/student",backdoor,require("../controllers/student"));
+
 
 
 function backdoor(req,res,next){
@@ -25,7 +27,8 @@ function backdoor(req,res,next){
             });
         }else
         {
-            var token=req.headers.authorization;
+            var token=req.headers.authorization; 
+            console.log(".......................",token);
             var payload=jwt.verify(token,"this is my secret key");
             if(!payload)
             {

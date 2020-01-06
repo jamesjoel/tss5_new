@@ -25,7 +25,7 @@ export class StudentComponent implements OnInit {
     // });
 
     this._actRoute.paramMap.subscribe(data => {
-      // console.log(data);
+      // console.log(data.params);
       this._student.student(data.params.id).subscribe(result => {
         // console.log(result);
         this.data=result;
