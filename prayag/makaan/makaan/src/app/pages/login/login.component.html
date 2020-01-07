@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="row">
+                <div class="col-md-6 m-0 p-0" style="height: 350px;">
+                    <div class="card m-0" style="height: 350px;">
+                        <div class="card-header">
+                            <h3>Login</h3>
+                            <p>Sign in to your account</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                    </div>
+                                    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="user.email">
+                                </div>
+                            </div> 
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="user.password">
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-dark d-block mx-auto" (click)="login()" >Login</button>
+                            <p class="mt-2 text-center"><i class="fa fa-arrow-left"></i> <a class="text-primary" routerLink="/home"> Back to home</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 m-0 p-0" style="height: 350px;">
+                    <div class="card m-0" style="height: 350px; background-color: cornflowerblue;">
+                        <div class="card-body">
+                            <h3 class="text-center text-light mt-5">Register</h3>
+                            <a routerLink="/buyer-register" style="width: 180px;" class="btn btn-dark d-block mx-auto text-light mt-4 " >Register as a Buyer</a>
+                            <a class="btn btn-dark d-block mx-auto text-light mt-4" style="width: 180px;" routerLink="/seller-register">Register as a Seller</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
