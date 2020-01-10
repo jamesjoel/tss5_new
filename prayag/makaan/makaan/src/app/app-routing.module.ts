@@ -36,7 +36,7 @@ const routes: Routes = [
     component:ContactComponent
   },
   {
-    path:"register",
+    path:"register/:id",
     component:RegisterComponent
   },
   {

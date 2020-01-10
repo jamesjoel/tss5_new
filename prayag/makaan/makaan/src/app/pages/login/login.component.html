@@ -14,7 +14,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="user.email">
+                                    <input type="email" class="form-control" name="email" placeholder="Email" [(ngModel)]="user.email">
                                 </div>
                             </div> 
                             <div class="form-group">
@@ -22,7 +22,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-lock"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="user.password">
+                                    <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password">
                                 </div>
                             </div> 
                         </div>
@@ -36,8 +36,8 @@
                     <div class="card m-0" style="height: 350px; background-color: cornflowerblue;">
                         <div class="card-body">
                             <h3 class="text-center text-light mt-5">Register</h3>
-                            <a routerLink="/buyer-register" style="width: 180px;" class="btn btn-dark d-block mx-auto text-light mt-4 " >Register as a Buyer</a>
-                            <a class="btn btn-dark d-block mx-auto text-light mt-4" style="width: 180px;" routerLink="/seller-register">Register as a Seller</a>
+                            <a [routerLink]="['/register/'+'buyer']"   style="width: 180px;" class="btn btn-dark d-block mx-auto text-light mt-4 " >Register as a Buyer</a>
+                            <a  [routerLink]="['/register/'+'seller']" class="btn btn-dark d-block mx-auto text-light mt-4" style="width: 180px;" >Register as a Seller</a>
                         </div>
                     </div>
                 </div>

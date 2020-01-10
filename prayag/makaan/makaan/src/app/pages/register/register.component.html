@@ -1,0 +1,59 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+                <div class="card m-0">
+                    <div class="card-header">
+                        <h2 class="text-info">
+                            <strong>Sign up As a {{ buyerId.id }}</strong>
+                        </h2>
+                        <p>Get a <b>Free</b> account. Start selling or buying your property today with <a routerLink="/" class="text-dark"><b>Makaan.com</b></a></p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row"> 
+                                <h4 class="text-info">Login Credentials</h4>    
+                                    <div class="col-md-12 border border-bottom-1 border-secondary">
+                                    </div>
+                            </div>
+                            <!-- <div class="row"> -->
+                                <br>
+                                <div class="form-group">
+                                    <label><b>E-Mail</b></label>
+                                    <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email">
+                                </div>
+                                <div class="form-group">
+                                    <label><b>Password</b></label>
+                                    <input type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="user.password">
+                                </div>
+                            <!-- </div> -->
+                            <br>
+                            <div class="row">
+                                <h4 class="text-info">
+                                    Contact Details
+                                </h4>
+                                <span class="col-md-12 border border-bottom-1 border-secondary"></span>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label><b>Full Name</b></label>
+                                <input type="text" name="name" class="form-control" placeholder="Full Name" [(ngModel)]="user.name">
+                            </div>
+                            <div class="form-group">
+                                <label><b>Contact</b></label>
+                                <input type="tel" name="contact " class="form-control" placeholder="contact" [(ngModel)]="user.contact">
+                                <p style="font-size: 14px;">
+                                    Please enter a valid phone number. Verification code will be sent on Your preferred number to validate.
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <button (click)="signup()" class="btn btn-lg btn-dark d-block mx-auto">Create Profile</button>
+                                <br>
+                                <p class="text-center" style="text-align: justify;">By Clicking on Create Profile, you acknowledge that you understand Makaan.com <br> <span class="text-info">Terms and Conditions</span></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
