@@ -8,6 +8,7 @@ import { SellComponent } from './pages/sell/sell.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { BackdoorGuard } from './guards/backdoor.guard';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   },
   {
     path:"sell",
-    component:SellComponent
+    component:SellComponent,
+    canActivate:[BackdoorGuard]
   },
   {
     path:"contact",

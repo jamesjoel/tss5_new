@@ -17,12 +17,23 @@ export class LoginComponent implements OnInit {
     email:"",
     password:""
   }
+  errorMsg:string; 
 
   ngOnInit() {
   }
 
   login(){
-    
+    this._auth.doLogin(this.user).subscribe(data=>{
+      // console.log(data);
+      if(data)
+      {
+        localStorage.setItem("token",data.token);
+        this._router.navigate(["/"]);
+      }
+    },
+    err=>{
+      this.errorMsg=err.error.msg
+    });
   }
 
 }

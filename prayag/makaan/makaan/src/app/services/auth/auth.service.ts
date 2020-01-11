@@ -13,10 +13,10 @@ export class AuthService {
     private _router:Router
   ) { }
 
-  url:"http://localhost:3000/api/user/";
+  url:string="http://localhost:3000/api/user/login";
 
   doLogin(user:User){
-    return this._http.post<any>(this.url+"login",user)
+    return this._http.post<any>(this.url,user)
   }
 
   isLoggedIn(){
