@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+  <a routerLink="/" class="navbar-brand text-danger"><b>Bio-Data</b></a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ <ng-template [ngIf]="_auth.isLoggedIn()" [ngIfElse]="noLogin">
+  <div id="myMenu" class="collapse navbar-collapse float-left">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="/" routerLinkActive="active" class="nav-link text-danger">Home</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/user" routerLinkActive="active" class="nav-link text-danger">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/upload" routerLinkActive="active" class="nav-link text-danger">Upload Section</a>
+      </li>
+    </ul>
+  </div>
+  <div id="myMenu" class="collapse navbar-collapse justify-content-end">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a (click)="_auth.logout()" style="cursor: pointer" class="nav-link text-danger">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light bg-danger badge mt-2 p-2"><b>{{ userInfo.name | uppercase }}</b></a>
+      </li>
+    </ul>
+  </div>
+ </ng-template>
+ <ng-template #noLogin  >
+  <div id="myMenu" class="collapse navbar-collapse float-left">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="/" routerLinkActive="active"  class="nav-link text-danger">Home</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/upload" routerLinkActive="active" class="nav-link text-danger">Upload Section</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/user" routerLinkActive="active" class="nav-link text-danger">User</a>
+      </li>
+    </ul>
+  </div>
+  <div id="myMenu" class="collapse navbar-collapse justify-content-end">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="/login" routerLinkActive="active" class="nav-link text-danger">Login</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/signup" routerLinkActive="active" class="nav-link text-danger">Signup</a>
+      </li>
+    </ul>
+  </div>
+ </ng-template>
+</nav>
+
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>

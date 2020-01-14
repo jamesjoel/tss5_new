@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this._actRoute.paramMap.subscribe(data=>{
-      console.log(data.params);
+      // console.log(data.params);
       this.buyerId=data.params;
     });
   }
