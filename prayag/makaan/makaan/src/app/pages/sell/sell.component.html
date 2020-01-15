@@ -1,1 +1,56 @@
-<p>sell works!</p>
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-8">
+            <mat-tab-group>
+                <mat-tab label="Basic Details">
+                    <br>
+                   <div class="form-group">
+                       <label>You Are:</label>
+                       <select name="type" class="form-control">
+                           <option value="">Select</option>
+                           <option value="owner">Owner</option>
+                           <option value="dealer">Dealer</option>
+                           <option value="builder">Builder</option>
+                       </select>
+                   </div>
+                   <div class="form-group">
+                       <label>List property for:</label>
+                       <select name="category" class="form-control">
+                           <option value="">select</option>
+                           <option value="sell">Sell</option>
+                           <option value="rent">Rent</option>
+                           <option value="paying guest">Paying Guest</option>
+                       </select>
+                   </div>
+                   <div class="form-group">
+                       <label>Residential:</label>
+                       <select name="residential" class="form-control">
+                           <option value="">Select</option>
+                           <option value="apartments">Apartments</option>
+                           <option value="house">House Villa</option>
+                           <option value="residential land">Residential Land</option>
+                           <option value="others">Others</option>
+                       </select>
+                   </div>
+                </mat-tab>
+                <mat-tab label="About">
+                    <h2>About</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quia saepe. Impedit quos iusto veritatis assumenda, velit voluptates corporis similique molestias! Facilis quae inventore quia sunt iste quos aut nostrum?</p>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                       <mat-icon>settings</mat-icon> 
+                    </ng-template>
+                    <h2>Contact</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quia saepe. Impedit quos iusto veritatis assumenda, velit voluptates corporis similique molestias! Facilis quae inventore quia sunt iste quos aut nostrum?</p>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+        <div class="col-md-4">
+            <p class="pt-5">If you're stuck on the form and don't know what to do next, you can email us at <span class="text-info">services@makaan.com</span> or call us at <span class="text-info">1800 41 99099</span> (IND Toll-Free). For international numbers click here.
+                Get your property verified. Verified properties get 80% more responses from interested and genuine buyers.             
+            </p>
+        </div>
+    </div>
+</div>
