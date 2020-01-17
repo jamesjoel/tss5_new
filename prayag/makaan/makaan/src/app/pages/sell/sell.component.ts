@@ -12,4 +12,8 @@ export class SellComponent implements OnInit {
   ngOnInit() {
   }
 
+  selectType(a){
+    console.log(a.toElement.name)
+  }
+
 }

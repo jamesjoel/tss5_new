@@ -1,0 +1,31 @@
+.icon img{
+    margin-right: 80px;
+}
+
+.form-group select{
+    background: none;
+    border: none;
+    -webkit-appearance: none;
+    padding: 0 50px 0 0px;
+    cursor: pointer;
+    text-indent: 8px;
+}
+
+.form-group select{
+    position: relative;
+    background: #fff;
+    border-bottom : 1px solid rgb(28, 157, 231);
+    height: 35px;
+    cursor: pointer;
+}
+
+.form-group select:before{
+    content: '';
+    background: #E71C28;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    pointer-events: none;
+}

@@ -5,42 +5,70 @@
             <mat-tab-group>
                 <mat-tab label="Basic Details">
                     <br>
-                   <div class="form-group">
-                       <label>You Are:</label>
-                       <select name="type" class="form-control">
-                           <option value="">Select</option>
-                           <option value="owner">Owner</option>
-                           <option value="dealer">Dealer</option>
-                           <option value="builder">Builder</option>
-                       </select>
-                   </div>
-                   <div class="form-group">
-                       <label>List property for:</label>
-                       <select name="category" class="form-control">
-                           <option value="">select</option>
-                           <option value="sell">Sell</option>
-                           <option value="rent">Rent</option>
-                           <option value="paying guest">Paying Guest</option>
-                       </select>
-                   </div>
-                   <div class="form-group">
-                       <label>Residential:</label>
-                       <select name="residential" class="form-control">
-                           <option value="">Select</option>
-                           <option value="apartments">Apartments</option>
-                           <option value="house">House Villa</option>
-                           <option value="residential land">Residential Land</option>
-                           <option value="others">Others</option>
-                       </select>
-                   </div>
+                   <form>
+                    <div class="form-group icon">
+                        <label><b>You Are:</b></label>
+                        <br>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="/assets/ownericon.png" class="d-block mx-auto" name="owner" (click)="selectType($event)" style="height: 50px;width: 50px; " alt="ownericon"> 
+                                    <br> <p class="text-center">Owner</p>
+                                </div>
+                                <div class="col-md-4">
+                                 <img src="/assets/dealericon.png" class="d-block mx-auto" name="dealer" (click)="selectType($event)" style="height: 50px;width: 50px; " alt="dealericon">
+                                 <br> <p class="text-center">Dealer</p> 
+                                </div>
+                                <div class="col-md-4">
+                                 <img src="/assets/buildericon.png" class="d-block mx-auto" name="builder" (click)="selectType($event)" style="height: 50px;width: 50px; " alt="buildericon">
+                                 <br> <p class="text-center">Builder</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="select"><b>List property for:</b></label>
+                        <select name="category" class="form-control" style="width: 200px;">
+                            <option value="">select</option>
+                            <option value="sell">Sell</option>
+                            <option value="rent">Rent</option>
+                            <option value="paying guest">Paying Guest</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><b>Property:</b></label>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="/assets/apartment.png" class="d-block mx-auto" (click)="selectProperty($event)" style="height: 50px; width: 50px;" name="apartment" alt="apartment">
+                                    <br> <p class="text-center">Apartments/ <br>Flats/Builder Floor</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="/assets/residentialland.jpg" class="d-block mx-auto" (click)="selectProperty($event)" style="height: 50px; width: 50px;" name="residentialland" alt="residentialland">
+                                    <br> <p class="text-center">Residential/ <br> Commercial Land</p> 
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="/assets/home.jpg" class="d-block mx-auto" (click)="selectProperty($event)" style="height: 50px; width: 50px;" name="house" alt="house/villa">
+                                    <br> <p class="text-center">House/ <br>Farm House/Villa</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                         <label><b>Location</b></label>
+                         <div class="input-group">
+                             <input type="text" class="form-control" placeholder="House No./Street Name">
+                         </div>
+                    </div>
+                   </form>
                 </mat-tab>
-                <mat-tab label="About">
+                <mat-tab label="Property Details">
                     <h2>About</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quia saepe. Impedit quos iusto veritatis assumenda, velit voluptates corporis similique molestias! Facilis quae inventore quia sunt iste quos aut nostrum?</p>
                 </mat-tab>
                 <mat-tab>
                     <ng-template mat-tab-label>
-                       <mat-icon>settings</mat-icon> 
+                       <mat-icon>Price</mat-icon> Pricing
                     </ng-template>
                     <h2>Contact</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quia saepe. Impedit quos iusto veritatis assumenda, velit voluptates corporis similique molestias! Facilis quae inventore quia sunt iste quos aut nostrum?</p>
