@@ -2,30 +2,30 @@
     margin-right: 80px;
 }
 
+.form-group .control-label:after{
+    content: "*" ;
+    color: red;
+}
+
+
 .form-group select{
-    background: none;
+    // background: none;
     border: none;
-    -webkit-appearance: none;
-    padding: 0 50px 0 0px;
-    cursor: pointer;
-    text-indent: 8px;
+    text-indent: 10px;
 }
 
 .form-group select{
     position: relative;
-    background: #fff;
-    border-bottom : 1px solid rgb(28, 157, 231);
+    background: rgb(179, 230, 245);
+    border-bottom : 1px solid rgb(3, 93, 145);
     height: 35px;
     cursor: pointer;
 }
 
-.form-group select:before{
-    content: '';
-    background: #E71C28;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 40px;
-    pointer-events: none;
+.form-group input{
+    border: none;
+    position: relative;
+    background: rgb(179, 230, 245);
+    border-bottom : 1px solid rgb(3, 93, 145);
+    cursor: pointer;
 }

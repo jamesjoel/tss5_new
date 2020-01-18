@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule, MatIconModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,6 +21,7 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
 import { FooterComponent } from './sharedcomponent/footer/footer.component';
 import { JumbotronComponent } from './sharedcomponent/jumbotron/jumbotron.component';
 import { RegisterComponent } from './pages/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { RegisterComponent } from './pages/register/register.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatTabsModule,
     MatIconModule,
     NgbModule,

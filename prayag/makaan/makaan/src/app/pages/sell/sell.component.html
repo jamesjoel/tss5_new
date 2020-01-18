@@ -2,12 +2,12 @@
     <div class="row">
         
         <div class="col-md-8">
-            <mat-tab-group>
+            <mat-tab-group [selectedIndex]="selectedIndex">
                 <mat-tab label="Basic Details">
                     <br>
-                   <form>
+                   <form [formGroup]="sellForm">
                     <div class="form-group icon">
-                        <label><b>You Are:</b></label>
+                        <label class="control-label"><b>You Are:</b></label>
                         <br>
                         <div class="container">
                             <div class="row">
@@ -26,17 +26,19 @@
                             </div>
                         </div>
                     </div>
+                    <hr>
                     <div class="form-group">
-                        <label class="select"><b>List property for:</b></label>
-                        <select name="category" class="form-control" style="width: 200px;">
+                        <label class="select control-label"><b>List property for:</b></label>
+                        <select name="category" class="form-control" style="width: 300px; margin-left: 30px;">
                             <option value="">select</option>
                             <option value="sell">Sell</option>
                             <option value="rent">Rent</option>
                             <option value="paying guest">Paying Guest</option>
                         </select>
                     </div>
+                    <hr>
                     <div class="form-group">
-                        <label><b>Property:</b></label>
+                        <label class="control-label"><b>Property:</b></label>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-4">
@@ -54,24 +56,132 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                         <label><b>Location</b></label>
-                         <div class="input-group">
-                             <input type="text" class="form-control" placeholder="House No./Street Name">
+                    <hr>
+                    <div class="form-group" formGroupName="location">
+                         <p style="font-size: 17px;"><b>Location:</b></p>
+                         <div style="width: 550px;">
+                            <label class="control-label">House No./Street:</label>
+                             <input type="text" formControlName="house_number_street" class="form-control" placeholder="House No./Street Name">
+                         </div> <br>
+                         <div class="row" style="width: 700px;">
+                            <div class="col">
+                                <label class="control-label">Locality</label>
+                                 <input type="text" formControlName="locality" class="form-control" placeholder="Locality">
+                             </div>
+                            <div class="col">
+                                <label class="control-label">City</label>
+                                 <input type="text" formControlName="city" class="form-control" placeholder="City">
+                             </div>
                          </div>
+                    </div>
+                    <div class="form-group">
+                        <button (click)="clickMe()" class="btn btn-info d-block mx-auto">Next</button>
                     </div>
                    </form>
                 </mat-tab>
+
+
+
                 <mat-tab label="Property Details">
-                    <h2>About</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quia saepe. Impedit quos iusto veritatis assumenda, velit voluptates corporis similique molestias! Facilis quae inventore quia sunt iste quos aut nostrum?</p>
+                    <p class="mt-3">
+                        <b>Give us some information about the configuration of the property</b>
+                    </p>
+
+                    <form [formGroup]="propertyForm" >
+                        <div class="form-group" style="width: 600px;" formGroupName="built_area">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="control-label">Super Built Up Area:</label>
+                                    <input type="" class="form-control" placeholder="area" formControlName="area">
+                                </div>
+                                <div class="col">
+                                    <label>Area Unit:</label>
+                                    <select class="form-control" formControlName="unit">
+                                        <option value="">Select Unit</option>
+                                        <option value="sq.ft">Sq.ft</option>
+                                        <option value="sq.m">Sq.m</option>
+                                        <option value="acres">acres</option>
+                                        <option value="hectare  ">hectare</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group" style="width: 600px;" formGroupName="rooms">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="control-label">
+                                        Bedrooms:
+                                    </label>
+                                    <select class="form-control" formControlName="bedroom">
+                                        <option value="">Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label>Bathrooms:</label>
+                                    <select name="" class="form-control" formControlName="bathroom">
+                                        <option value="">Select</option>
+                                        <option value="">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Furnishing</label>
+                            <select name="" class="form-control" style="width: 285px;">
+                                <option value="">Select</option>
+                                <option value="f">Furnished</option>
+                                <option value="sf">Semi-Furnished</option>
+                                <option value="u">unfurnished</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="width: 600px;" formGroupName="floors">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="control-label">Total Floors:</label>
+                                    <input type="text" class="form-control" placeholder="Nos. of floors" formControlName="total">
+                                </div>
+                                <div class="col">
+                                    <label class="control-label">
+                                        Property On Floor:
+                                    </label>
+                                    <input type="number" class="form-control" placeholder="floor no." formControlName="property_floor">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary d-block float-right" (click)="next()"  style="margin-right: 125px;" >Next ></button>
+                            <button class="btn btn-outline-primary d-block float-left" (click)="previous()" > < Previous</button>
+                        </div>
+                    </form>
                 </mat-tab>
-                <mat-tab>
-                    <ng-template mat-tab-label>
-                       <mat-icon>Price</mat-icon> Pricing
-                    </ng-template>
-                    <h2>Contact</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quia saepe. Impedit quos iusto veritatis assumenda, velit voluptates corporis similique molestias! Facilis quae inventore quia sunt iste quos aut nostrum?</p>
+
+
+
+                <mat-tab label="Pricing">
+                    <p class="mt-3">
+                        Add some details about pricing
+                    </p>
+                    <div class="form-group">
+                        <label class="control-label">Expected Price</label>
+                        <input type="text" style="width: 300px; margin-left: 150px;" class="form-control" placeholder="Expected Price">
+                    </div>
+                    <br>
+                    <br>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-success d-block float-right" style="margin-right: 400px;" (click)="submit()">Submit</button>
+                        <button class="btn btn-outline-primary d-block float-left" (click)="previous()" > < Previous</button>
+                    </div>
                 </mat-tab>
             </mat-tab-group>
         </div>
